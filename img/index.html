@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+
+<html lang="be">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Яе голас — Аудыябібліятэка беларускіх паэтэс</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0d1a0d;--bg2:#111f11;--bg3:#162016;
+  --gold:#d4aa4a;--gold-dim:#a07e35;
+  --cream:#fff8ec;--cream-dim:#d4c4a0;
+  --green-mid:#2a3d2a;--green-hi:#3a5c3a;
+  --text:#f0e8d0;--muted:#9a8f78;--radius:10px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;transition:background .4s}
+nav.scrolled{background:rgba(13,26,13,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,170,74,.2)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--gold);text-decoration:none}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:var(--cream);text-decoration:none;font-size:.78rem;letter-spacing:.06em;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:80px 5% 60px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg-img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(8,18,8,.8) 0%,rgba(10,22,10,.58) 40%,rgba(8,18,8,.88) 100%)}
+.hero-portraits{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.hp{position:absolute;border:2px solid rgba(212,170,74,.28);box-shadow:0 8px 32px rgba(0,0,0,.7);border-radius:3px;overflow:hidden}
+.hp img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:sepia(50%) brightness(.58) contrast(1.05)}
+.hp1{width:150px;height:200px;left:3%;bottom:8%;transform:rotate(-5deg)}
+.hp2{width:140px;height:185px;left:10%;top:14%;transform:rotate(3deg)}
+.hp3{width:135px;height:178px;left:18%;bottom:12%;transform:rotate(2deg);opacity:.7}
+.hp4{width:148px;height:196px;right:3%;bottom:10%;transform:rotate(4deg)}
+.hp5{width:138px;height:183px;right:11%;top:12%;transform:rotate(-3deg)}
+.hp6{width:130px;height:172px;right:19%;bottom:14%;transform:rotate(-2deg);opacity:.7}
+.portraits-veil{position:absolute;inset:0;background:radial-gradient(ellipse 65% 75% at center,rgba(8,18,8,.25) 0%,rgba(8,18,8,.72) 55%,rgba(8,18,8,.97) 100%)}
+.hero-content{position:relative;z-index:2}
+.ornament{width:200px;height:24px;margin:0 auto 1.6rem;opacity:.7}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.8rem,9vw,7.5rem);font-weight:700;line-height:.95;color:#ffffff;margin-bottom:.4rem;text-shadow:0 2px 24px rgba(0,0,0,.9)}
+.hero h1 span{color:#f5c842;font-style:italic;text-shadow:0 2px 24px rgba(0,0,0,.9),0 0 40px rgba(212,170,74,.5)}
+.hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.5vw,1.3rem);color:#ffffff;letter-spacing:.14em;margin-bottom:1.2rem;font-weight:600;text-shadow:0 1px 12px rgba(0,0,0,.9)}
+.hero-deviz{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.95rem,2vw,1.15rem);color:#f5dfa0;max-width:500px;margin:0 auto 1.8rem;line-height:1.55;text-shadow:0 1px 10px rgba(0,0,0,.8);font-weight:600}
+.hero-counter{display:flex;gap:2rem;justify-content:center;margin-bottom:2.2rem}
+.counter-item{text-align:center}
+.counter-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:#f5c842;line-height:1;text-shadow:0 2px 16px rgba(0,0,0,.7)}
+.counter-label{font-size:.62rem;letter-spacing:.12em;color:#ffffff;margin-top:.25rem;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.btn-primary{display:inline-block;padding:.85rem 2.5rem;background:rgba(212,170,74,.18);border:2px solid #f5c842;color:#ffffff;font-size:.82rem;font-weight:600;letter-spacing:.14em;text-decoration:none;border-radius:2px;transition:all .25s;cursor:pointer}
+.btn-primary:hover{background:var(--gold);color:var(--bg)}
+.sec-banner{width:100%;position:relative;overflow:hidden}
+.sec-banner img{width:100%;height:auto;display:block}
+.sec-banner-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,26,13,0) 0%,rgba(13,26,13,.8) 100%)}
+.sec-body{padding:50px 5% 70px}
+.sec-bg-authors{background:linear-gradient(180deg,#0a160a 0%,#111f11 100%)}
+.sec-bg-playlist{background:linear-gradient(180deg,#0f1a0f 0%,#0a150a 100%)}
+.sec-bg-method{background:linear-gradient(180deg,#0d1c0d 0%,#0a160a 100%)}
+.sec-bg-teacher{background:linear-gradient(180deg,#0a160a 0%,#111f11 100%)}
+.sec-bg-about{background:linear-gradient(180deg,#0d1a0d 0%,#080f08 100%)}
+.section-label{font-size:.72rem;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin-bottom:.7rem;display:block;font-weight:500}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,4vw,2.7rem);font-weight:700;color:var(--cream);line-height:1.15;margin-bottom:2rem}
+.divider{width:60px;height:2px;background:var(--gold);margin:1rem 0 2rem;opacity:.6}
+.quote-band{padding:45px 5%;text-align:center;background:linear-gradient(90deg,#080f08,#14241a,#080f08);border-top:1px solid rgba(212,170,74,.12);border-bottom:1px solid rgba(212,170,74,.12)}
+.quote-band blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.3rem,3vw,2rem);color:var(--cream);max-width:720px;margin:0 auto .7rem;line-height:1.45;font-weight:600}
+.quote-band cite{font-size:.75rem;color:var(--gold-dim);letter-spacing:.1em}
+
+/* SCROLLABLE TABS */
+.author-tabs{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.8rem;margin-bottom:2rem;scrollbar-width:thin;scrollbar-color:rgba(212,170,74,.3) transparent}
+.author-tabs::-webkit-scrollbar{height:3px}
+.author-tabs::-webkit-scrollbar-track{background:transparent}
+.author-tabs::-webkit-scrollbar-thumb{background:rgba(212,170,74,.3);border-radius:2px}
+.author-tab{display:flex;align-items:center;gap:.6rem;padding:.6rem 1rem;border:1.5px solid rgba(212,170,74,.18);border-radius:40px;cursor:pointer;background:rgba(255,255,255,.03);transition:all .25s;flex-shrink:0}
+.author-tab:hover{border-color:rgba(212,170,74,.4);background:rgba(212,170,74,.06)}
+.author-tab.active{border-color:var(--gold);background:rgba(212,170,74,.12)}
+.tab-thumb{width:40px;height:40px;border-radius:50%;overflow:hidden;border:2px solid rgba(212,170,74,.35);flex-shrink:0;background:var(--green-mid)}
+.tab-thumb img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.tab-name{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:600;color:var(--cream);line-height:1.1}
+.tab-years{font-size:.62rem;color:var(--muted);letter-spacing:.06em}
+.author-panel{display:none}
+.author-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.author-info{background:rgba(255,255,255,.04);border:1px solid rgba(212,170,74,.14);border-radius:var(--radius);padding:1.8rem}
+.author-avatar{width:96px;height:96px;border-radius:50%;border:2.5px solid rgba(212,170,74,.5);overflow:hidden;margin-bottom:1.2rem;background:var(--green-mid)}
+.author-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.author-name{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;color:var(--cream);margin-bottom:.15rem}
+.author-years-line{font-size:.75rem;color:var(--gold-dim);letter-spacing:.08em;margin-bottom:.9rem}
+.author-bio{font-size:.84rem;color:var(--cream-dim);line-height:1.75;margin-bottom:1.1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.2rem}
+.tag{font-size:.66rem;letter-spacing:.06em;padding:.25rem .65rem;border-radius:20px;border:1px solid rgba(212,170,74,.28);color:var(--gold-dim)}
+.author-players{display:flex;flex-direction:column;gap:.55rem}
+.player{background:rgba(0,0,0,.3);border-radius:8px;padding:.75rem 1rem;cursor:pointer;transition:background .2s;border:1px solid transparent}
+.player:hover{background:rgba(212,170,74,.08);border-color:rgba(212,170,74,.2)}
+.player-type{font-size:.64rem;letter-spacing:.08em;color:var(--muted);margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem}
+.player-row{display:flex;align-items:center;gap:.7rem}
+.play-btn{width:32px;height:32px;min-width:32px;border-radius:50%;background:var(--gold);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .15s}
+.play-btn:hover{transform:scale(1.1)}
+.play-btn svg{width:10px;height:12px;fill:var(--bg);margin-left:2px}
+.waveform-wrap{flex:1}
+.waveform{display:flex;align-items:center;gap:2px;height:28px}
+.waveform-bar{width:3px;border-radius:2px;background:var(--green-hi);transition:height .1s,background .2s}
+.player:hover .waveform-bar{background:rgba(212,170,74,.4)}
+.waveform-bar.lit{background:var(--gold)!important}
+.player-time{font-size:.7rem;color:var(--muted);white-space:nowrap}
+.author-poem-box{background:rgba(255,255,255,.04);border:1px solid rgba(212,170,74,.14);border-radius:var(--radius);padding:1.8rem;display:flex;flex-direction:column}
+.poem-label{font-size:.68rem;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:.7rem;font-weight:500}
+.poem-title-h{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:var(--cream);margin-bottom:.25rem}
+.poem-year{font-size:.7rem;color:var(--muted);margin-bottom:1.1rem}
+.poem-text-block{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--cream-dim);line-height:2.0;flex:1;border-left:2px solid rgba(212,170,74,.3);padding-left:1.1rem}
+.poem-note{font-size:.72rem;color:rgba(212,170,74,.6);margin-top:.8rem;font-style:normal;padding:.5rem .8rem;background:rgba(212,170,74,.06);border-radius:4px}
+
+/* PLAYLIST */
+.playlist-list{display:flex;flex-direction:column}
+.track-row{display:grid;grid-template-columns:2rem 1fr auto auto;align-items:center;gap:1rem;padding:.9rem 1.1rem;border-radius:6px;cursor:pointer;transition:background .2s}
+.track-row:hover{background:rgba(255,255,255,.05)}
+.track-row:nth-child(even){background:rgba(255,255,255,.02)}
+.track-row:nth-child(even):hover{background:rgba(255,255,255,.05)}
+.track-num{font-size:.75rem;color:var(--muted);text-align:right}
+.track-title{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--cream);font-weight:600}
+.track-author{font-size:.73rem;color:var(--muted)}
+.track-tag{font-size:.63rem;padding:.18rem .5rem;border-radius:20px;border:1px solid rgba(212,170,74,.2);color:var(--gold-dim)}
+.track-dur{font-size:.73rem;color:var(--muted)}
+
+/* METHOD */
+.method-author-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.method-tab{padding:.5rem 1.1rem;border:1.5px solid rgba(212,170,74,.2);border-radius:30px;cursor:pointer;font-size:.78rem;color:var(--cream-dim);background:rgba(255,255,255,.03);transition:all .25s}
+.method-tab:hover{border-color:rgba(212,170,74,.4);color:var(--cream)}
+.method-tab.active{border-color:var(--gold);background:rgba(212,170,74,.12);color:var(--cream);font-weight:500}
+.method-panel{display:none}
+.method-panel.active{display:block;animation:fadeIn .3s ease}
+.mcard{background:rgba(255,255,255,.04);border:1px solid rgba(212,170,74,.18);border-radius:var(--radius);overflow:hidden;max-width:900px;margin:0 auto}
+.mcard-header{background:linear-gradient(135deg,rgba(212,170,74,.1),rgba(212,170,74,.03));padding:1.6rem 2rem;border-bottom:1px solid rgba(212,170,74,.15);display:flex;align-items:flex-start;gap:1.2rem}
+.method-avatar{width:68px;height:85px;border-radius:6px;overflow:hidden;border:2px solid rgba(212,170,74,.35);flex-shrink:0;background:var(--green-mid)}
+.method-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.mcard-meta h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--cream);font-weight:700}
+.mcard-meta p{font-size:.75rem;color:var(--muted);margin-top:.25rem}
+.mcard-body{padding:1.8rem}
+.mcard-section{margin-bottom:1.6rem;padding-bottom:1.6rem;border-bottom:1px solid rgba(212,170,74,.08)}
+.mcard-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.mcard-section-title{font-size:.68rem;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:.9rem;display:flex;align-items:center;gap:.5rem}
+.mcard-section-title::after{content:'';flex:1;height:1px;background:rgba(212,170,74,.15)}
+.mcard-2col{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.mcard-3col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.9rem}
+.info-block{background:rgba(0,0,0,.2);border-radius:6px;padding:.8rem .9rem}
+.info-block-label{font-size:.6rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:.25rem}
+.info-block-val{font-size:.83rem;color:var(--cream);font-weight:500}
+.objective-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.objective-list li{display:flex;gap:.65rem;align-items:flex-start;font-size:.83rem;color:var(--cream-dim);line-height:1.6}
+.obj-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:.52rem;flex-shrink:0}
+.lesson-steps{display:flex;flex-direction:column;gap:.9rem}
+.step{display:flex;gap:.9rem;align-items:flex-start}
+.step-time{font-size:.68rem;color:var(--gold-dim);font-weight:600;letter-spacing:.06em;white-space:nowrap;padding-top:.1rem;min-width:3.4rem}
+.step-content{flex:1}
+.step-title{font-size:.86rem;color:var(--cream);font-weight:600;margin-bottom:.2rem}
+.step-desc{font-size:.8rem;color:var(--cream-dim);line-height:1.65}
+.step-tag{display:inline-block;font-size:.6rem;padding:.12rem .45rem;border-radius:10px;border:1px solid rgba(212,170,74,.25);color:var(--gold-dim);margin-left:.45rem;vertical-align:middle}
+.q-list{display:flex;flex-direction:column;gap:.85rem}
+.q-item{display:flex;gap:.75rem;align-items:flex-start}
+.q-level{font-size:.6rem;padding:.18rem .45rem;border-radius:10px;background:rgba(212,170,74,.1);color:var(--gold-dim);white-space:nowrap;margin-top:.1rem;flex-shrink:0}
+.q-text{font-size:.82rem;color:var(--cream-dim);line-height:1.65}
+.creative-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.creative-card{background:rgba(0,0,0,.2);border-radius:8px;padding:.9rem 1rem;border:1px solid rgba(212,170,74,.1)}
+.creative-card h4{font-size:.8rem;color:var(--cream);font-weight:600;margin-bottom:.35rem}
+.creative-card p{font-size:.76rem;color:var(--cream-dim);line-height:1.6}
+.assess-table{width:100%;border-collapse:collapse;font-size:.8rem}
+.assess-table th{text-align:left;font-size:.66rem;letter-spacing:.1em;color:var(--gold-dim);padding:.45rem .75rem;border-bottom:1px solid rgba(212,170,74,.15);font-weight:500;text-transform:uppercase}
+.assess-table td{padding:.65rem .75rem;border-bottom:1px solid rgba(255,255,255,.05);color:var(--cream-dim);vertical-align:top;line-height:1.5}
+.assess-table tr:last-child td{border-bottom:none}
+.qr-row{display:flex;gap:.9rem;margin-top:1.3rem;flex-wrap:wrap}
+.qr-badge{display:flex;align-items:center;gap:.55rem;padding:.45rem .9rem;border:1px solid rgba(212,170,74,.2);border-radius:6px;font-size:.73rem;color:var(--muted)}
+.qr-sq{width:30px;height:30px;background:var(--cream);border-radius:3px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;padding:3px}
+.qr-d{background:var(--bg);border-radius:1px}
+.teacher-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-bottom:1.8rem}
+.teacher-block{background:rgba(255,255,255,.04);border:1px solid rgba(212,170,74,.14);border-radius:var(--radius);padding:1.8rem;display:flex;flex-direction:column;gap:.9rem}
+.teacher-icon{width:46px;height:46px;background:rgba(212,170,74,.1);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.teacher-icon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.teacher-block h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--cream);font-weight:700}
+.teacher-block p{font-size:.82rem;color:var(--cream-dim);line-height:1.6}
+.btn-ghost{padding:.5rem 1.3rem;border:1.5px solid rgba(212,170,74,.35);color:var(--gold-dim);background:transparent;font-size:.73rem;letter-spacing:.08em;border-radius:2px;cursor:pointer;transition:all .2s;margin-top:auto;align-self:flex-start}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.school-note{text-align:center;font-size:.8rem;color:var(--muted);padding:1.1rem;border-top:1px solid rgba(212,170,74,.1)}
+.school-note span{color:var(--gold-dim)}
+.about-inner{max-width:680px;margin:0 auto;text-align:center}
+.about-inner p{font-size:.9rem;color:var(--cream-dim);line-height:1.85;margin-bottom:2.2rem}
+.partners{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-bottom:1.8rem}
+.partner-badge{padding:.45rem 1rem;border:1px solid rgba(212,170,74,.2);border-radius:4px;font-size:.7rem;color:var(--muted);letter-spacing:.06em}
+footer{background:#060d06;border-top:1px solid rgba(212,170,74,.12);padding:2rem 5%;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--gold-dim)}
+.footer-note{font-size:.68rem;color:var(--muted);text-align:center;flex:1}
+.footer-socials{display:flex;gap:.7rem}
+.social-icon{width:32px;height:32px;border:1px solid rgba(212,170,74,.2);border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s}
+.social-icon:hover{border-color:var(--gold-dim)}
+.social-icon svg{width:15px;height:15px;fill:var(--muted)}
+.demo-badge{position:fixed;bottom:1.2rem;right:1.2rem;background:rgba(8,14,8,.93);backdrop-filter:blur(8px);border:1px solid rgba(212,170,74,.3);border-radius:20px;padding:.4rem .9rem;font-size:.63rem;color:var(--muted);letter-spacing:.06em;z-index:200;pointer-events:none}
+.demo-badge span{color:var(--gold-dim)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .author-panel.active{grid-template-columns:1fr}
+  .mcard-2col,.mcard-3col,.creative-grid,.teacher-grid{grid-template-columns:1fr}
+  .track-row{grid-template-columns:1.5rem 1fr auto}
+  .track-tag{display:none}
+  .hp3,.hp6{display:none}
+  footer{flex-direction:column;text-align:center}
+}
+.tab-thumb.ph,.author-avatar.ph,.method-avatar.ph{display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);letter-spacing:.04em}
+.tab-thumb.ph{font-size:.9rem}.author-avatar.ph{font-size:2rem}.method-avatar.ph{font-size:1.6rem}
+
+.author-avatar img,.method-avatar img,.tab-thumb img{object-fit:cover;object-position:center top}
+
+/* Repaired playlist layout */
+.playlist-controls{display:flex;flex-wrap:wrap;gap:.65rem;align-items:center;margin:0 0 1.25rem;padding:1rem;border:1px solid rgba(212,170,74,.22);border-radius:12px;background:rgba(0,0,0,.18)}
+#playlistPlayAll,#playlistStopAll{font:inherit;border-radius:999px;cursor:pointer;padding:.65rem 1rem}
+#playlistPlayAll{background:var(--gold);color:var(--bg);border:0;font-weight:700}
+#playlistStopAll{background:transparent;color:var(--cream);border:1px solid rgba(212,170,74,.35)}
+#playlistStatus{font-size:.82rem;color:var(--muted);flex:1;min-width:220px}
+#playlist .playlist-list{display:flex;flex-direction:column;gap:.25rem}
+#playlist .track-row{display:grid;grid-template-columns:2.4rem minmax(0,1fr) auto auto;align-items:center;gap:.9rem;padding:.9rem 1rem;border-radius:8px;min-height:66px;box-sizing:border-box}
+#playlist .track-main{min-width:0}
+#playlist .track-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--cream);font-weight:600;line-height:1.35;overflow-wrap:anywhere}
+#playlist .track-author{font-size:.76rem;color:var(--muted);margin-top:.12rem}
+#playlist .track-num{font-size:.75rem;color:var(--muted);text-align:right}
+#playlist .track-tag{white-space:nowrap;font-size:.65rem;padding:.2rem .55rem;border-radius:20px;border:1px solid rgba(212,170,74,.2);color:var(--gold-dim)}
+#playlist .track-dur{font-size:.7rem;color:var(--muted);white-space:nowrap}
+#playlist .track-row.is-playing{background:rgba(212,170,74,.09)}
+@media(max-width:640px){#playlist .track-row{grid-template-columns:1.8rem minmax(0,1fr) auto;gap:.55rem;padding:.75rem .55rem}#playlist .track-tag{display:none}#playlist .track-title{font-size:1rem}#playlist .track-dur{font-size:.65rem}}
+
+.teacher-intro{max-width:720px;color:var(--muted);margin:0 0 1.5rem;line-height:1.7}
+.teacher-author-lists{display:grid;gap:1.5rem;margin-top:2rem}
+.teacher-material-list{border:1px solid rgba(212,170,74,.18);border-radius:16px;padding:1.25rem;background:rgba(9,18,12,.25)}
+.teacher-material-list h3{font-size:1.1rem;margin:0 0 1rem;color:var(--gold)}
+.teacher-author-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.teacher-author-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.35rem .75rem;align-items:center;padding:.9rem;border:1px solid rgba(212,170,74,.12);border-radius:10px;background:rgba(255,255,255,.025)}
+.teacher-author-item strong{font-size:.9rem;line-height:1.4}
+.teacher-author-item span{font-size:.75rem;color:var(--muted);grid-column:1;line-height:1.4}
+.teacher-author-item button{grid-column:2;grid-row:1/3;font-size:.72rem;padding:.5rem .65rem}
+@media(max-width:640px){.teacher-author-grid{grid-template-columns:1fr}.teacher-author-item{grid-template-columns:minmax(0,1fr)}.teacher-author-item button{grid-column:1;grid-row:auto;justify-self:start;margin-top:.35rem}}
+
+/* Единый стиль творческих заданий для всех авторов */
+.creative-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem;align-items:stretch;margin-top:.9rem}
+.creative-card{box-sizing:border-box;min-width:0;width:100%;min-height:112px;display:flex;flex-direction:column;justify-content:flex-start;background:rgba(0,0,0,.2);border-radius:8px;padding:.9rem 1rem;border:1px solid rgba(212,170,74,.1)}
+.creative-card h4{font-size:.8rem;color:var(--cream);font-weight:600;margin:0 0 .35rem;line-height:1.45}
+.creative-card p{font-size:.76rem;color:var(--cream-dim);line-height:1.6;margin:0}
+@media(max-width:768px){.creative-grid{grid-template-columns:1fr}}
+.btn-ghost[disabled]{opacity:.45;cursor:default;pointer-events:none}
+</style>
+<style>
+.teacher-author-details{border:1px solid rgba(190,156,67,.24);border-radius:12px;padding:12px 16px;margin:14px 0;background:rgba(8,18,11,.28)}
+.teacher-author-details>summary{cursor:pointer;list-style:none;font-weight:600;color:#e5c15b;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:3px 0}
+.teacher-author-details>summary::-webkit-details-marker{display:none}
+.teacher-author-details>summary:after{content:'＋';font-size:18px;opacity:.8}
+.teacher-author-details[open]>summary:after{content:'−'}
+.teacher-author-details>div[id]{padding-top:12px}
+</style>
+</head>
+<body>
+<nav id="nav">
+<a class="nav-logo" href="#">Яе голас</a>
+<ul class="nav-links">
+<li><a href="#authors">Аўтары</a></li>
+<li><a href="#playlist">Зборнік</a></li>
+<li><a href="#methodology">Картка</a></li>
+<li><a href="#teacher">Настаўніку</a></li>
+<li><a href="#about">Пра праект</a></li>
+</ul>
+</nav>
+<section class="hero">
+<div class="hero-bg">
+<img alt="" class="hero-bg-img" src="img/hero.jpg"/>
+<div class="hero-bg-overlay"></div>
+</div>
+<a class="btn-primary" href="#authors">Слухаць</a>
+</section>
+<div class="quote-band reveal">
+<blockquote>«Цябе і заворвалі, і закопвалі. І ўсё ж нашы продкі праз гора данеслі да нас цябе, родную, цёплую, жывую і непаўторную»</blockquote>
+<cite>— Атрывак з верша Я. Янішчыц «Мова»</cite>
+</div>
+<section class="sec-bg-authors" id="authors">
+<div class="sec-banner reveal">
+<img alt="Аўтары" src="img/banner-authors.jpg"/>
+<div class="sec-banner-overlay"></div>
+</div>
+<div class="sec-body">
+<div class="author-tabs reveal">
+<div class="author-tab" onclick="switchAuthor('a1',this)">
+<div class="tab-thumb"><img alt="Цётка" src="img/tsetka.jpg"/></div>
+<div><div class="tab-name">Цётка</div><div class="tab-years">1876–1916</div></div>
+</div><div class="author-tab" onclick="switchAuthor('a2',this)">
+<div class="tab-thumb"><img alt="Канстанцыя Буйло" src="img/buylo.jpg"/></div>
+<div><div class="tab-name">Канстанцыя Буйло</div><div class="tab-years">1893–1986</div></div>
+</div><div class="author-tab" onclick="switchAuthor('a11',this)">
+<div class="tab-thumb ph"><img alt="Яўгенія Пфляўмбаўм" src="img/pflaumbaum.jpg"/></div>
+<div><div class="tab-name">Яўгенія Пфляўмбаўм</div><div class="tab-years">1908–1996</div></div>
+</div><div class="author-tab" onclick="switchAuthor('a12',this)">
+<div class="tab-thumb ph"><img alt="Ядвіга Бяганская" src="img/byaganskaya.jpg"/></div>
+<div><div class="tab-name">Ядвіга Бяганская</div><div class="tab-years">1908–1992</div></div>
+</div><div class="author-tab" onclick="switchAuthor('a13',this)">
+<div class="tab-thumb ph"><img alt="Зоська Верас" src="img/veras.jpg"/></div>
+<div><div class="tab-name">Зоська Верас</div><div class="tab-years">1892–1991</div></div>
+</div><div class="author-tab" onclick="switchAuthor('a14',this)">
+<div class="tab-thumb ph"><img alt="Ніна Тарас" src="img/taras.jpg"/></div>
+<div><div class="tab-name">Ніна Тарас</div><div class="tab-years">1916–2006</div></div>
+</div><div class="author-tab" onclick="switchAuthor('a6',this)">
+<div class="tab-thumb"><img alt="Ніна Мацяш" src="img/matsyash.jpg"/></div>
+<div><div class="tab-name">Ніна Мацяш</div><div class="tab-years">1943–2013</div></div>
+</div><div class="author-tab" onclick="switchAuthor('a5',this)">
+<div class="tab-thumb"><img alt="Еўгенія Янішчыц" src="img/yanishchyts.jpg"/></div>
+<div><div class="tab-name">Еўгенія Янішчыц</div><div class="tab-years">1948–1988</div></div>
+</div><div class="author-tab" onclick="switchAuthor('a8',this)">
+<div class="tab-thumb"><img alt="Раіса Баравікова" src="img/baravikova.jpg"/></div>
+<div><div class="tab-name">Раіса Баравікова</div><div class="tab-years">1947–2026</div></div>
+</div><div class="author-tab" onclick="switchAuthor('a7',this)">
+<div class="tab-thumb"><img alt="Данута Бічэль" src="img/bichel.jpg"/></div>
+<div><div class="tab-name">Данута Бічэль</div><div class="tab-years">1937–</div></div>
+</div><div class="author-tab" onclick="switchAuthor('a9',this)">
+<div class="tab-thumb"><img alt="Людміла Рублеўская" src="img/rubleuskaya.jpg"/></div>
+<div><div class="tab-name">Людміла Рублеўская</div><div class="tab-years">1965–</div></div>
+</div>
+</div>
+<div class="author-panel active reveal" id="a1">
+<div class="author-info">
+<div class="author-avatar"><img alt="Цётка" src="img/tsetka.jpg"/></div>
+<div class="author-name">Цётка</div>
+<div class="author-years-line">Алаіза Сцяпанаўна Пашкевіч · 1876–1916</div>
+<p class="author-bio">Першы жаночы голас беларускай літаратуры. Паэтэса, грамадская дзеячка, асветніца. Стваральніца першых беларускіх падручнікаў для дзяцей — «Першае чытанне для дзетак беларусаў» (1906). Арганізоўвала нелегальныя школы па вёсках Гарадзеншчыны і Віленшчыны. Пісала тады, калі беларуская мова была пад забаронай Расійскай імперыі.</p>
+<div class="tags"><span class="tag">Радзіма</span><span class="tag">Свабода</span><span class="tag">Асвета</span><span class="tag">Рэвалюцыя 1905</span></div>
+<div class="author-players">
+<div class="player real-player" onclick="playTrack(this,'tsetka','bio')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><circle cx="5" cy="5" r="4" stroke="#c9a84c" stroke-width="1"></circle><path d="M5 3V5L6.5 6" stroke="#c9a84c" stroke-linecap="round" stroke-width="1"></path></svg>Яе жыццё · біяграфічны трэк <span style="color:#d4aa4a;font-size:.6rem;margin-left:.3rem">▶ РЭАЛЬНЫ ЗАПІС</span></div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvb1"></div></div><span class="player-time" id="time_bio">0:00</span></div>
+</div>
+<div class="player real-player" onclick="playTrack(this,'tsetka','poem')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M2 8 C2 5 5 2 8 2" stroke="#c9a84c" stroke-linecap="round" stroke-width="1"></path><circle cx="2" cy="8" fill="#c9a84c" r="1.5"></circle></svg>Яе слова · «Хрэст на свабоду» <span style="color:#d4aa4a;font-size:.6rem;margin-left:.3rem">▶ РЭАЛЬНЫ ЗАПІС</span></div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvp1"></div></div><span class="player-time" id="time_poem">0:00</span></div>
+</div>
+</div>
+</div>
+<div class="author-poem-box">
+<div class="poem-label">Яе слова</div>
+<div class="poem-title-h">«Хрэст на свабоду»</div>
+<div class="poem-year">1905</div>
+<div class="poem-text-block">На усходзе красна неба.<br/>
+          Нас не дзівіць — так і трэба!<br/>
+          Кроў ракамі льецца ў мора,<br/>
+          Салдат гіне там ад гора<br/>
+          Без кашулі і без хлеба.<br/>
+          Нас не дзівіць — так і трэба!<br/>
+          Гоняць сына, гоняць мужа,<br/>
+          Мы слухаем цара дужа.<br/>
+          З душы б'ецца скарга ў неба,<br/>
+          А мы маўчым — так і трэба!<br/><br/>
+          А цар сыпнуў, як бы з неба,<br/>
+          Тысяч куляў — так і трэба.<br/>
+          Дурняў хрысціць на свабоду.<br/>
+          Цар навуку даў народу,<br/>
+          Паказаў ім, як бы з неба,<br/>
+          Што больш цара не патрэба!<br/><br/>
+          Кладуць сеткі, каскі, бляхі.<br/>
+          Найбольш страшаць — гэта ляхі:<br/>
+          Ціха колюць, цэльне стрэляць,<br/>
+          Так, як жыта, чарцей мелюць.<br/>
+          Народ чуе голас з неба,<br/>
+          Што больш цара не патрэба.</div>
+</div>
+</div>
+<div class="author-panel reveal" id="a2">
+<div class="author-info">
+<div class="author-avatar"><img alt="Канстанцыя Буйло" src="img/buylo.jpg"/></div>
+<div class="author-name">Канстанцыя Буйло</div>
+<div class="author-years-line">Канстанцыя Карлаўна Буйло · 1893–1986</div>
+<p class="author-bio">Паэтэса, сябра рэдакцыі «Нашай Нівы». Нарадзілася на Мінскай губерні. Першы зборнік «Курганная кветка» (1914) прынёс ёй шырокую вядомасць. Пражыла доўгае жыццё — 93 гады — і стала сведкай вялікіх перамен. Яе лірыка напоўнена любоўю да роднага кута і памяццю пра дзяцінства.</p>
+<div class="tags"><span class="tag">Дзяцінства</span><span class="tag">Прырода</span><span class="tag">Радзіма</span><span class="tag">Зборнік 1914</span></div>
+<div class="author-players">
+<div class="player" onclick="playTrack(this,'buylo','bio')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><circle cx="5" cy="5" r="4" stroke="#8a7f68" stroke-width="1"></circle><path d="M5 3V5L6.5 6" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path></svg>Яе жыццё · біяграфічны трэк</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvb2"></div></div><span class="player-time">4:10</span></div>
+</div>
+<div class="player" onclick="playTrack(this,'buylo','poem')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M2 8 C2 5 5 2 8 2" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path><circle cx="2" cy="8" fill="#8a7f68" r="1.5"></circle></svg>Яе слова · «Мяцеліца»</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvp2"></div></div><span class="player-time">1:50</span></div>
+</div>
+</div>
+</div>
+<div class="author-poem-box"><div class="poem-label">Яе слова</div><div class="poem-title-h">«Мяцеліца»</div><div class="poem-year">1937</div><div class="poem-text-block">Праз пустыя бязмежныя гоні<br/>
+          Скачуць лёгкія белыя коні.<br/>
+          Ветрагонныя звоняць капыты,<br/>
+          Шкляным звонам ільдзістым падбіты.<br/><br/>
+          Еду, еду па беламу полю,<br/>
+          А віхура дарогу заносіць.<br/>
+          Яна ўслед мне так страшна гало́сіць,<br/>
+          Быццам сэрца заходзіцца з болю.<br/><br/>
+          Ўдаль лятуць мае белыя коні<br/>
+          Па пустым бездарожным загоне.<br/>
+          Пераблытаў ім вецер гуллівы<br/>
+          Легкавейныя, тонкія грывы.<br/><br/>
+          Поле снегам сыпучым пакрыта,<br/>
+          Звоняць звонам ільдзістым капыты…<br/>
+          І куды я загублена еду,<br/>
+          Без пуці, без напрамку і следу?!</div></div>
+</div>
+<div class="author-panel reveal" id="a5">
+<div class="author-info">
+<div class="author-avatar"><img alt="Еўгенія Янішчыц" src="img/yanishchyts.jpg"/></div>
+<div class="author-name">Еўгенія Янішчыц</div>
+<div class="author-years-line">Еўгенія Іванаўна Янішчыц · 1948–1988</div>
+<p class="author-bio">Паэтэса «ціхай лірыкі». Нарадзілася ў вёсцы Велута на Палессі. Скончыла філфак БДУ. Працавала рэдактарам у выдавецтве «Мастацкая літаратура». Вершы пра каханне, адзіноту і Беларусь перакладзены на дзесяткі моў. Пайшла з жыцця ва ўзросце 40 гадоў, пакінуўшы неўміручую лірыку.</p>
+<div class="tags"><span class="tag">Каханне</span><span class="tag">Палессе</span><span class="tag">Мінск</span><span class="tag">Ціхая лірыка</span></div>
+<div class="author-players">
+<div class="player" onclick="playTrack(this,'yanishchyts','bio')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><circle cx="5" cy="5" r="4" stroke="#8a7f68" stroke-width="1"></circle><path d="M5 3V5L6.5 6" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path></svg>Яе жыццё · біяграфічны трэк</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvb5"></div></div><span class="player-time">4:18</span></div>
+</div>
+<div class="player" onclick="playTrack(this,'yanishchyts','poem')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M2 8 C2 5 5 2 8 2" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path><circle cx="2" cy="8" fill="#8a7f68" r="1.5"></circle></svg>Яе слова · «Мова»</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvp5"></div></div><span class="player-time">2:05</span></div>
+</div>
+</div>
+</div>
+<div class="author-poem-box"><div class="poem-label">Яе слова</div><div class="poem-title-h">«Мова»</div><div class="poem-year">1967? · Н. С. Гілевічу</div><div class="poem-text-block">Чую тваю жаўруковую музыку<br/>
+          Ў скошаных травах мурожных,<br/>
+          Мова! Як сонца маё беларускае,<br/>
+          Ты свецішся словам кожным.<br/><br/>
+          Цябе і заворвалі, і закопвалі.<br/>
+          І ўсё ж нашы продкі праз гора<br/>
+          Данеслі да нас цябе, родную, цёплую,<br/>
+          Жывую і непаўторную.<br/><br/>
+          І калі ты мяне толькі паклічаш,<br/>
+          Памру за цябе без енку.<br/>
+          Нашу я любоў да цябе вялікую<br/>
+          У сэрцы сваім маленькім.</div></div>
+</div>
+<div class="author-panel reveal" id="a6">
+<div class="author-info">
+<div class="author-avatar"><img alt="Ніна Мацяш" src="img/matsyash.jpg"/></div>
+<div class="author-name">Ніна Мацяш</div>
+<div class="author-years-line">Ніна Сяргееўна Мацяш · 1943–2013</div>
+<p class="author-bio">Паэтэса, лаўрэат Дзяржаўнай прэміі Беларусі. Нарадзілася на Мінскай вобласці. Аўтар шматлікіх зборнікаў лірыкі, насычанай роздумам пра жыццё, каханне і чалавечую душу. Яе вершы вылучаюцца глыбінёй пачуцця і адточанасцю слова.</p>
+<div class="tags"><span class="tag">Душа</span><span class="tag">Лірыка</span><span class="tag">Любоў</span><span class="tag">Дзяржаўная прэмія</span></div>
+<div class="author-players">
+<div class="player" onclick="playTrack(this,'matsyash','bio')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><circle cx="5" cy="5" r="4" stroke="#8a7f68" stroke-width="1"></circle><path d="M5 3V5L6.5 6" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path></svg>Яе жыццё · біяграфічны трэк</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvb6"></div></div><span class="player-time">3:50</span></div>
+</div>
+<div class="player" onclick="playTrack(this,'matsyash','poem')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M2 8 C2 5 5 2 8 2" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path><circle cx="2" cy="8" fill="#8a7f68" r="1.5"></circle></svg>Яе слова · «І прыйдзе ноч, і ноч міне...»</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvp6"></div></div><span class="player-time">1:50</span></div>
+</div>
+</div>
+</div>
+<div class="author-poem-box"><div class="poem-label">Яе слова</div><div class="poem-title-h">«І прыйдзе ноч, і ноч міне...»</div><div class="poem-year">1984?</div><div class="poem-text-block">І прыйдзе ноч, і ноч міне,<br/>
+          І дзень павекі разамкне<br/>
+          І аглядзіцца навакола.<br/>
+          Ці будзе рады й мне?<br/><br/>
+          Ён — грук матораў, шоргат шын,<br/>
+          Ён — самалётны рык вышынь, —<br/>
+          Што для яго пялёстак кволы<br/>
+          Ссамотненай душы?<br/><br/>
+          Па бровы ўкутаму ў браню,<br/>
+          Пялёстак той, як парахню,<br/>
+          Бязлітасна пусціць на вецер<br/>
+          Было б так лёгка дню, —<br/><br/>
+          Калі б у непрыманні зла<br/>
+          Душа змагарна не ўрасла<br/>
+          У заўтрае надзей бяссмерцем.</div><div class="poem-note">Тэкст падаецца паводле выдання: невядомае. Крыніца: vershy.ru</div></div>
+</div>
+<div class="author-panel reveal" id="a7">
+<div class="author-info">
+<div class="author-avatar"><img alt="Данута Бічэль" src="img/bichel.jpg"/></div>
+<div class="author-name">Данута Бічэль</div>
+<div class="author-years-line">Данута Рыгораўна Бічэль-Загнетава · 1937–</div>
+<p class="author-bio">Паэтэса, сябра Саюза пісьменнікаў Беларусі. Нарадзілася ў Гродна. Аўтар дзясяткаў зборнікаў. Яе паэзія глыбока звязана з хрысціянскай традыцыяй, беларускай зямлёй і народнай памяццю. Адна з самых паважаных жывых беларускіх паэтэс.</p>
+<div class="tags"><span class="tag">Зямля</span><span class="tag">Вера</span><span class="tag">Памяць</span><span class="tag">Жывы аўтар</span></div>
+<div class="author-players">
+<div class="player" onclick="playTrack(this,'bichel','bio')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><circle cx="5" cy="5" r="4" stroke="#8a7f68" stroke-width="1"></circle><path d="M5 3V5L6.5 6" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path></svg>Яе жыццё · біяграфічны трэк</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvb7"></div></div><span class="player-time">3:40</span></div>
+</div>
+<div class="player" onclick="playTrack(this,'bichel','poem')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M2 8 C2 5 5 2 8 2" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path><circle cx="2" cy="8" fill="#8a7f68" r="1.5"></circle></svg>Яе слова · «Роднае слова»</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvp7"></div></div><span class="player-time">1:45</span></div>
+</div>
+</div>
+</div>
+<div class="author-poem-box"><div class="poem-label">Яе слова</div><div class="poem-title-h">«Роднае слова»</div><div class="poem-year">1958</div><div class="poem-text-block">Пад казачным дубам<br/>
+          над Нёманам сінім<br/>
+          хлапец прызнаваўся ў каханні<br/>
+          дзяўчыне.<br/><br/>
+          І рэхам той шэпт<br/>
+          адгукаўся між гаю:<br/>
+          ...Кахаю, кахаю...<br/><br/>
+          Я чула пяшчотнае,<br/>
+          шчырасці поўнае,<br/>
+          маё, беларускае, роднае, кроўнае,<br/>
+          такое раптоўнае,<br/>
+          такое чароўнае.<br/><br/>
+          Такое ласкавае, цёплае, чыстае,<br/>
+          як сонца, агністае,<br/>
+          як Нёман, празрыстае,<br/>
+          як казка, быліна, як песня,<br/>
+          жаданае,<br/>
+          дагэтуль зусім у жыцці не спазнанае,<br/>
+          вясновае слова ад шчырага сэрца.<br/><br/>
+          Яно празвінела над хвалямі ў рэчцы.<br/>
+          Вятрыска шаптаў яго<br/>
+          з лісцем між гаю:<br/>
+          ...Кахаю, кахаю...<br/>
+          Шапталі яго сенажаць і дуброва,<br/>
+          людзьмі перачутае,<br/>
+          некаму нова,<br/>
+          адзінае, дзіўнае светлае слова —<br/>
+          кахаю... кахаю...<br/><br/>
+          Кахаю...<br/>
+          Люблю...<br/>
+          Беларускаму краю<br/>
+          бясконца я слова «люблю» паўтараю.</div><div class="poem-note">Тэкст падаецца паводле выдання: Родная літаратура: хрэстаматыя для 11-га кл. агульнаадукац. шк. / склад. У. А. Дзіско, М. І. Мішчанчук, Т. М. Саўчук. — Мінск: Універсітэцкае, 1998.</div></div>
+</div>
+<div class="author-panel reveal" id="a8">
+<div class="author-info">
+<div class="author-avatar"><img alt="Раіса Баравікова" src="img/baravikova.jpg"/></div>
+<div class="author-name">Раіса Баравікова</div>
+<div class="author-years-line">Раіса Андрэеўна Баравікова · 1947–2026</div>
+<p class="author-bio">Паэтэса, лаўрэат Дзяржаўнай прэміі Беларусі. Нарадзілася ў Мінскай вобласці. Аўтар шматлікіх зборнікаў любоўнай і грамадзянскай лірыкі. Яе вершы — адны з найбольш чытаемых у Беларусі. Уваходзіць у школьную праграму.</p>
+<div class="tags"><span class="tag">Каханне</span><span class="tag">Лірыка</span><span class="tag">Лаўрэат</span><span class="tag">Жывы аўтар</span></div>
+<div class="author-players">
+<div class="player" onclick="playTrack(this,'baravikova','bio')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><circle cx="5" cy="5" r="4" stroke="#8a7f68" stroke-width="1"></circle><path d="M5 3V5L6.5 6" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path></svg>Яе жыццё · біяграфічны трэк</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvb8"></div></div><span class="player-time">3:45</span></div>
+</div>
+<div class="player" onclick="playTrack(this,'baravikova','poem')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M2 8 C2 5 5 2 8 2" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path><circle cx="2" cy="8" fill="#8a7f68" r="1.5"></circle></svg>Яе слова · «Я — дзяўчынка на шары»</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvp8"></div></div><span class="player-time">1:55</span></div>
+</div>
+</div>
+</div>
+<div class="author-poem-box"><div class="poem-label">Яе слова</div><div class="poem-title-h">«Я — дзяўчынка на шары»</div><div class="poem-year">1967</div><div class="poem-text-block">Я — дзяўчынка на шары,<br/>
+          што плыве у блакіце!<br/>
+          І палаюць Стажары<br/>
+          нада мною ў зеніце,<br/>
+          і нікому не ў цяжкасць,<br/>
+          я — нібыта пушынка,<br/>
+          што трапляе ў бязважкасць,<br/>
+          я — на шары дзяўчынка!<br/>
+          Шар вялікі, бязмежны<br/>
+          У здзіўленні я кратаю,<br/>
+          быццам Белыя Вежы,<br/>
+          быццам чорныя кратэры,<br/>
+          горы ззяюць снягамі<br/>
+          і дымяцца абшары<br/>
+          у мяне пад нагамі.<br/>
+          Я — дзяўчынка на шары!<br/><br/>
+          Заручуся з бясстрашшам<br/>
+          у густой сіняве,<br/>
+          страціць як раўнаважжа,<br/>
+          калі шар не дае?!<br/>
+          Ім адзіным сагрэта,<br/>
+          не ўпаду, і не дзіва!<br/>
+          Пада мною планета,<br/>
+          Што мяне нарадзіла.<br/><br/>
+          Я ж — дзяўчынка на шары!</div></div>
+</div>
+<div class="author-panel reveal" id="a9">
+<div class="author-info">
+<div class="author-avatar"><img alt="Людміла Рублеўская" src="img/rubleuskaya.jpg"/></div>
+<div class="author-name">Людміла Рублеўская</div>
+<div class="author-years-line">Людміла Іванаўна Рублеўская · 1965–</div>
+<p class="author-bio">Паэтэса, празаік, драматург. Нарадзілася ў Мінску. Аўтар гістарычных раманаў і зборнікаў паэзіі. Працуе ў газеце «Літаратура і мастацтва». Яе творы — гэта глыбокае пранікненне ў беларускую гісторыю і сучаснасць.</p>
+<div class="tags"><span class="tag">Гісторыя</span><span class="tag">Мінск</span><span class="tag">Проза і паэзія</span><span class="tag">Жывы аўтар</span></div>
+<div class="author-players">
+<div class="player" onclick="playTrack(this,'rubleuskaya','bio')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><circle cx="5" cy="5" r="4" stroke="#8a7f68" stroke-width="1"></circle><path d="M5 3V5L6.5 6" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path></svg>Яе жыццё · біяграфічны трэк</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvb9"></div></div><span class="player-time">3:30</span></div>
+</div>
+<div class="player" onclick="playTrack(this,'rubleuskaya','poem')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M2 8 C2 5 5 2 8 2" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path><circle cx="2" cy="8" fill="#8a7f68" r="1.5"></circle></svg>Яе слова · «Шляхта»</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvp9"></div></div><span class="player-time">1:50</span></div>
+</div>
+</div>
+</div>
+<div class="author-poem-box"><div class="poem-label">Яе слова</div><div class="poem-title-h">«Шляхта»</div><div class="poem-year">2001?</div><div class="poem-text-block">Першы снег над мястэчкам,<br/>
+          І мерзнуць званы на званіцы;<br/>
+          І ў маленькі маёнтак з'язджаецца шляхта на баль.<br/>
+          І глядзяць з-пад рукі на паненак здаля маладзіцы —<br/>
+          Люд мясцовы, загадкавы, просты, як белы паркаль.<br/>
+          Мы жывём, нібы прыхадні тут, — шляхта, кветкі-прыкрасы,<br/>
+          Пакаленні змяняюцца — тыя ж бязродцы растуць.<br/>
+          Што за людзі жывуць тут? Якія тут рэчкі і краскі?<br/>
+          Што за песні пяюцца? На мове якой нас клянуць?<br/>
+          Невядома. Бліжэй нам героі пагаслай Элады<br/>
+          Ці маркізы парыжскія, нават расейскі разбой...<br/>
+          І не нам напяваюць балады пушчанскія шаты,<br/>
+          Абыходзіць дамы нашы лірнік з пагардай сляпой.<br/>
+          Як расплоцяцца горка за гордую пыху нашчадкі,<br/>
+          Як завянуць яны на зямлі, што не стала сваёй.<br/>
+          Выцвітаюць, як душы, кляйнодаў старыя пячаткі,<br/>
+          І змяшаецца смерць назаўсёды з блакітнай крывёй...<br/>
+          І ляцяць над мястэчкам іскрыстыя Штрауса вальсы,<br/>
+          А званы на мясцовай званіцы цяжкія, як лёс.<br/>
+          Не заўважаць вас нават, бязродныя кветкі-прыкрасы,<br/>
+          У гнілой каляіне ад бедных сялянскіх калёс.</div></div>
+</div>
+<div class="author-panel reveal" id="a11">
+<div class="author-info">
+<div class="author-avatar ph"><img alt="Яўгенія Пфляўмбаўм" src="img/pflaumbaum.jpg"/></div>
+<div class="author-name">Яўгенія Пфляўмбаўм</div>
+<div class="author-years-line">1908–1996</div>
+<p class="author-bio">Нарадзілася ў сям'і чыгуначніка. Скончыла літаратурна-лінгвістычнае аддзяленне БДУ (1930), была членам «Маладняка» і БелАППа. У 1933 г. выехала ў Сібір услед за асуджаным мужам — паэтам Максімам Лужаніным. Пасля доўгага маўчання вярнулася да творчасці ў 1980-я: выйшлі кнігі «Сувой жыцця» (1989) і «На захадзе сонца» (1992). Перакладала з рускай і ўкраінскай моў.</p>
+<div class="tags"><span class="tag">Маладосць</span><span class="tag">Маладняк</span><span class="tag">Сібір</span><span class="tag">Вяртанне</span></div>
+<div class="author-players">
+<div class="player" onclick="playTrack(this,'pflaumbaum','bio')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><circle cx="5" cy="5" r="4" stroke="#8a7f68" stroke-width="1"></circle><path d="M5 3V5L6.5 6" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path></svg>Яе жыццё · біяграфічны трэк</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvb11"></div></div><span class="player-time">—</span></div>
+</div>
+<div class="player" onclick="playTrack(this,'pflaumbaum','poem')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M2 8 C2 5 5 2 8 2" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path><circle cx="2" cy="8" fill="#8a7f68" r="1.5"></circle></svg>Яе слова · «Я маладая...»</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvp11"></div></div><span class="player-time">—</span></div>
+</div>
+</div>
+</div>
+<div class="author-poem-box"><div class="poem-label">Яе слова</div><div class="poem-title-h">«Я маладая...»</div><div class="poem-year">1926</div><div class="poem-text-block">Я маладая... жыццё наперад!..<br/>
+          Мне пырсне радасць вясёлы свет,<br/>
+          Кудзеляй шчасця, нібы ў сне тым<br/>
+          Сатчэцца шлях мне — нязрыўны нерат.<br/><br/>
+          Я маладая... мяне кахаюць...<br/>
+          Мне спеў квітнее на шчырых вуснах.<br/>
+          Ў вачох ня знойдзеш журбы спакуснай,<br/>
+          Я маладая... мяне кахаюць.<br/><br/>
+          Я маладая... кахаю шчыра<br/>
+          Бліскучы погляд яго вачэй;<br/>
+          І плынню срэбнай мой смех цячэ,<br/>
+          І шчасцем светлым пачуцці шырыць.</div></div>
+</div>
+<div class="author-panel reveal" id="a12">
+<div class="author-info">
+<div class="author-avatar ph"><img alt="Ядвіга Бяганская" src="img/byaganskaya.jpg"/></div>
+<div class="author-name">Ядвіга Бяганская</div>
+<div class="author-years-line">Ядвіга Іосіфаўна Бяганская · 1908–1992</div>
+<p class="author-bio">Нарадзілася ў Верхне-Удзінску ў сям'і беларускіх перасяленцаў у Сібір. Скончыла БДУ (1930), выкладала мову і літаратуру. У 1937 г. была арыштавана і асуджана на 10 гадоў лагераў, адбывала пакаранне на Калыме; рэабілітавана ў 1954 г. Працавала старшым рэдактарам Беларускага радыё для дзяцей і юнацтва. Першыя вершы надрукавала ў 1926 г. Аўтар кніг для дзяцей і аўтабіяграфічнай аповесці «Моя Голгофа»; перакладала з польскай і славацкай моў.</p>
+<div class="tags"><span class="tag">Калыма</span><span class="tag">Памяць</span><span class="tag">Дзецям</span><span class="tag">Пераклады</span></div>
+<div class="author-players">
+<div class="player" onclick="playTrack(this,'byaganskaya','bio')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><circle cx="5" cy="5" r="4" stroke="#8a7f68" stroke-width="1"></circle><path d="M5 3V5L6.5 6" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path></svg>Яе жыццё · біяграфічны трэк</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvb12"></div></div><span class="player-time">—</span></div>
+</div>
+<div class="player" onclick="playTrack(this,'byaganskaya','poem')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M2 8 C2 5 5 2 8 2" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path><circle cx="2" cy="8" fill="#8a7f68" r="1.5"></circle></svg>Яе слова · «Ноч»</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvp12"></div></div><span class="player-time">—</span></div>
+</div>
+</div>
+</div>
+<div class="author-poem-box"><div class="poem-label">Яе слова</div><div class="poem-title-h">«Ноч»</div><div class="poem-year">4 лютага 1926 г.</div><div class="poem-text-block">Маўчаць палі ў хітоне змроку.<br/>
+          Пануры лес заціх, маўчыць.<br/>
+          Сыходзіць ноч нячутным крокам,<br/>
+          І неба зоркамі гарыць.<br/>
+          Пад коўдрай туману расістай<br/>
+          Маўчыць зацята шыр балот.<br/>
+          На небасхіле серабрысты<br/>
+          Выходзіць месячык ў абход.<br/>
+          Маўчаць загоны, спіць араты,<br/>
+          Зямля спавіта цішынёй...<br/>
+          А думкі ўдаль плывуць узяты,<br/>
+          І ў сэрцы гэткі сумпакой.</div><div style="height:1.6rem"></div><div class="poem-title-h">* * * («Бягуць гады…»)</div><div class="poem-year">13 сакавіка 1926 г.</div><div class="poem-text-block">Бягуць гады, бягуць...<br/>
+          А бег іх хто стрымае?<br/>
+          Далёка прошласць уцякае,<br/>
+          Быллём старое парастае.<br/>
+          Гады бягуць, бягуць...<br/><br/>
+          Бягуць гады, бягуць...<br/>
+          Змяняюць ўсё на свеце.<br/>
+          Закон бацькоў знішчаюць дзеці,<br/>
+          Што ўчора члілась — сёння ў смецці.<br/>
+          Гады бягуць, бягуць...</div></div>
+</div>
+<div class="author-panel reveal" id="a13">
+<div class="author-info">
+<div class="author-avatar ph"><img alt="Зоська Верас" src="img/veras.jpg"/></div>
+<div class="author-name">Зоська Верас</div>
+<div class="author-years-line">Людвіка Антонаўна Сівіцкая · 1892–1991</div>
+<p class="author-bio">Сапраўднае імя — Людвіка Сівіцкая (па мужу Войцік). Нарадзілася ў Хмяльніцкай вобласці ў сям'і капітана царскай арміі. З 1923 г. жыла ў Вільні: рэдагавала дзіцячы часопіс «Заранка», узначальвала кааператыўнае таварыства «Пчала», выдавала часопіс «Беларуская борць». Аўтар «Беларуска-польска-расейска-лацінскага батанічнага слоўніка» (1924), успамінаў, кнігі для дзяцей «Каласкі». У Саюз пісьменнікаў СССР прынята ў 1982 г.</p>
+<div class="tags"><span class="tag">Вільня</span><span class="tag">Заранка</span><span class="tag">Батаніка</span><span class="tag">Успаміны</span></div>
+<div class="author-players">
+<div class="player" onclick="playTrack(this,'veras','bio')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><circle cx="5" cy="5" r="4" stroke="#8a7f68" stroke-width="1"></circle><path d="M5 3V5L6.5 6" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path></svg>Яе жыццё · біяграфічны трэк</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvb13"></div></div><span class="player-time">—</span></div>
+</div>
+<div class="player" onclick="playTrack(this,'veras','poem')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M2 8 C2 5 5 2 8 2" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path><circle cx="2" cy="8" fill="#8a7f68" r="1.5"></circle></svg>Яе слова · «Ліст»</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvp13"></div></div><span class="player-time">—</span></div>
+</div>
+</div>
+</div>
+<div class="author-poem-box"><div class="poem-label">Яе слова</div><div class="poem-title-h">«Ліст»</div><div class="poem-year">Менск</div><div class="poem-text-block">Хацела да цябе напісаці<br/>
+          На пялёстку ружы пахучай,<br/>
+          Але пялёстак мог згінуць<br/>
+          У пору буры грымучай.<br/><br/>
+          Хацела да цябе напісаці<br/>
+          На скрыллі у матылёчка,<br/>
+          Але матыль умірае,<br/>
+          Як прыйдзе цёмная ночка.<br/><br/>
+          Хацела я ліст паслаці<br/>
+          Праз ластаўку з нашага дому,<br/>
+          Але ж яна магла даці<br/>
+          Яго каму-небудзь другому.<br/><br/>
+          І так дзянёчкі праходзяць...<br/>
+          Не маю яго як паслаці,<br/>
+          А ліст такі ўжо сардэчны<br/>
+          Хацелася напісаці.</div><div style="height:1.6rem"></div><div class="poem-title-h">«Прыйдзі да нас, Хрысце...»</div><div class="poem-year">13 чэрвеня 1921 г., Альхоўнікі</div><div class="poem-text-block">Калі прад вякамі хадзіў Ты, Хрысце, па далінах зямлі... Пад святыя ногі Твае слаліся дываны кветчаных палёў... Перад Табою схіляліся гордыя вяршыні векавых ліп і бяроз... Для Цябе ліліся пахі з сасновых кадзяльніц... А Ты ўсё блаславіў, Хрысце, і ўсяму нёс у дані ўсемагутную ідэю кахання...<br/><br/>
+          Бо не было травінкі, не было камушчыка, пылінкі не было на гэтай беднай зямлі, каторых бы Ты, Хрысце, каханнем сваім не абняў...<br/><br/>
+          І ўсё, кругом, кахання было поўна...</div></div>
+</div>
+<div class="author-panel reveal" id="a14">
+<div class="author-info">
+<div class="author-avatar ph"><img alt="Ніна Тарас" src="img/taras.jpg"/></div>
+<div class="author-name">Ніна Тарас</div>
+<div class="author-years-line">Ніна Міхайлаўна Тарас (Жданук) · 1916–2006</div>
+<p class="author-bio">Нарадзілася ў вёсцы Заполле Навагрудскага раёна ў сялянскай сям'і. Вучылася ў Навагрудскай і Віленскай беларускіх гімназіях. Першы верш напісала па-польску ў трэцім класе; па-беларуску друкавацца пачала ў 1936 г. у віленскай газеце «Наша воля». У 1943–1944 гг. была сувязной партызанскай брыгады. Скончыла Вышэйшыя літаратурныя курсы ў Маскве (1957). Аўтар зборнікаў «На ўсход ідучы...», «Суніцы», «Кветка шчасця» і інш.</p>
+<div class="tags"><span class="tag">Вёска</span><span class="tag">Вільня</span><span class="tag">Вайна</span><span class="tag">Партызаны</span></div>
+<div class="author-players">
+<div class="player" onclick="playTrack(this,'taras','bio')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><circle cx="5" cy="5" r="4" stroke="#8a7f68" stroke-width="1"></circle><path d="M5 3V5L6.5 6" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path></svg>Яе жыццё · біяграфічны трэк</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvb14"></div></div><span class="player-time">—</span></div>
+</div>
+<div class="player" onclick="playTrack(this,'taras','poem')">
+<div class="player-type"><svg fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M2 8 C2 5 5 2 8 2" stroke="#8a7f68" stroke-linecap="round" stroke-width="1"></path><circle cx="2" cy="8" fill="#8a7f68" r="1.5"></circle></svg>Яе слова · «На ўсход ідучы»</div>
+<div class="player-row"><button class="play-btn" tabindex="-1"><svg viewbox="0 0 10 12"><polygon points="0,0 10,6 0,12"></polygon></svg></button><div class="waveform-wrap"><div class="waveform" id="wvp14"></div></div><span class="player-time">—</span></div>
+</div>
+</div>
+</div>
+<div class="author-poem-box"><div class="poem-label">Яе слова</div><div class="poem-title-h">«На ўсход ідучы»</div><div class="poem-year">1940</div><div class="poem-text-block">Шумелі, шумелі бярозанькі ў гаю<br/> Удзень і ўначы.<br/> У іх я пра шчасце сваё запытаю,<br/> Удаль ідучы.<br/><br/> Скажыце, ёсць многа дарог і сцяжынак<br/> Між ніў і гаёў, —<br/> Якою сягоння ісці я павінна<br/> Па шчасце сваё?<br/><br/> Шумелі, шумелі бярозанькі ў гаі<br/> Удзень і ўначы:<br/> — Дарогу да шчасця ты знойдзеш у краі,<br/> На ўсход ідучы.<br/><br/> Скажыця, ёсць песні, як сонная восень,<br/> Як сум салаўя,<br/> І ціха-журботныя песні калоссяў, —<br/> Якую пяяць?<br/><br/> Не тую, што ціха шуміць на палетках<br/> Тугою-журбой, —<br/> Спявай, што у маршы спяваюць сусветным,<br/> Выходзячы ў бой.<br/><br/> Шумелі, шумелі бярозанькі ў гаі<br/> Да позняй начы...<br/> Знайшла я і песню, і долю ў краі,<br/> На ўсход ідучы.</div></div>
+</div>
+</div>
+</section>
+<section class="sec-bg-playlist" id="playlist">
+<div class="sec-banner reveal">
+<img alt="Зборнік" src="img/banner-playlist.jpg"/>
+<div class="sec-banner-overlay"></div>
+</div>
+<div class="sec-body">
+<div class="playlist-controls">
+<button id="playlistPlayAll" type="button">▶ Слухаць разам</button>
+<button id="playlistStopAll" type="button">■ Спыніць</button>
+<span aria-live="polite" id="playlistStatus" role="status">Запісы з’яўляюцца па меры гатоўнасці; трэкі без файла прапускаюцца.</span>
+</div>
+<div class="playlist-list" role="list">
+<div aria-label="Хрэст на свабоду — Цётка" class="track-row playlist-track" data-track-index="0" data-key="tsetka" role="button" tabindex="0">
+<span class="track-num">01</span>
+<div class="track-main"><div class="track-title">Хрэст на свабоду</div><div class="track-author">Цётка</div></div>
+<span class="track-tag">Свабода</span>
+<span class="track-dur">Аўдыё</span>
+</div>
+<div aria-label="Мяцеліца — Канстанцыя Буйло" class="track-row playlist-track" data-track-index="1" data-key="buylo" role="button" tabindex="0">
+<span class="track-num">02</span>
+<div class="track-main"><div class="track-title">Мяцеліца</div><div class="track-author">Канстанцыя Буйло</div></div>
+<span class="track-tag">Зіма</span>
+<span class="track-dur">—</span>
+</div>
+<div aria-label="Я маладая... — Яўгенія Пфляўмбаўм" class="track-row playlist-track" data-track-index="2" data-key="pflaumbaum" role="button" tabindex="0">
+<span class="track-num">03</span>
+<div class="track-main"><div class="track-title">Я маладая...</div><div class="track-author">Яўгенія Пфляўмбаўм</div></div>
+<span class="track-tag">Маладосць</span>
+<span class="track-dur">—</span>
+</div>
+<div aria-label="Ноч — Ядвіга Бяганская" class="track-row playlist-track" data-track-index="3" data-key="byaganskaya" role="button" tabindex="0">
+<span class="track-num">04</span>
+<div class="track-main"><div class="track-title">Ноч</div><div class="track-author">Ядвіга Бяганская</div></div>
+<span class="track-tag">Ноч</span>
+<span class="track-dur">—</span>
+</div>
+<div aria-label="Ліст — Зоська Верас" class="track-row playlist-track" data-track-index="4" data-key="veras" role="button" tabindex="0">
+<span class="track-num">05</span>
+<div class="track-main"><div class="track-title">Ліст</div><div class="track-author">Зоська Верас</div></div>
+<span class="track-tag">Ліст</span>
+<span class="track-dur">—</span>
+</div>
+<div aria-label="На ўсход ідучы — Ніна Тарас" class="track-row playlist-track" data-track-index="5" data-key="taras" role="button" tabindex="0">
+<span class="track-num">06</span>
+<div class="track-main"><div class="track-title">На ўсход ідучы</div><div class="track-author">Ніна Тарас</div></div>
+<span class="track-tag">Шлях</span>
+<span class="track-dur">—</span>
+</div>
+<div aria-label="І прыйдзе ноч, і ноч міне... — Ніна Мацяш" class="track-row playlist-track" data-track-index="6" data-key="matsyash" role="button" tabindex="0">
+<span class="track-num">07</span>
+<div class="track-main"><div class="track-title">І прыйдзе ноч, і ноч міне...</div><div class="track-author">Ніна Мацяш</div></div>
+<span class="track-tag">Душа</span>
+<span class="track-dur">—</span>
+</div>
+<div aria-label="Мова — Яўгенія Янішчыц" class="track-row playlist-track" data-track-index="7" data-key="yanishchyts" role="button" tabindex="0">
+<span class="track-num">08</span>
+<div class="track-main"><div class="track-title">Мова</div><div class="track-author">Яўгенія Янішчыц</div></div>
+<span class="track-tag">Мова</span>
+<span class="track-dur">—</span>
+</div>
+<div aria-label="Я — дзяўчынка на шары — Раіса Баравікова" class="track-row playlist-track" data-track-index="8" data-key="baravikova" role="button" tabindex="0">
+<span class="track-num">09</span>
+<div class="track-main"><div class="track-title">Я — дзяўчынка на шары</div><div class="track-author">Раіса Баравікова</div></div>
+<span class="track-tag">Шлях</span>
+<span class="track-dur">—</span>
+</div>
+<div aria-label="Роднае слова — Данута Бічэль-Загнетава" class="track-row playlist-track" data-track-index="9" data-key="bichel" role="button" tabindex="0">
+<span class="track-num">10</span>
+<div class="track-main"><div class="track-title">Роднае слова</div><div class="track-author">Данута Бічэль-Загнетава</div></div>
+<span class="track-tag">Слова</span>
+<span class="track-dur">—</span>
+</div>
+<div aria-label="Шляхта — Людміла Рублеўская" class="track-row playlist-track" data-track-index="10" data-key="rubleuskaya" role="button" tabindex="0">
+<span class="track-num">11</span>
+<div class="track-main"><div class="track-title">Шляхта</div><div class="track-author">Людміла Рублеўская</div></div>
+<span class="track-tag">Гісторыя</span>
+<span class="track-dur">—</span>
+</div>
+</div>
+</div>
+</section>
+<section class="sec-bg-method" id="methodology">
+<div class="sec-banner reveal">
+<img alt="Метадычная картка" src="img/banner-method.jpg"/>
+<div class="sec-banner-overlay"></div>
+</div>
+<div class="sec-body">
+<div class="method-author-tabs reveal">
+<div class="method-tab active" onclick="switchMethod('m1',this)">Цётка · «Хрэст на свабоду»</div>
+<div class="method-tab" onclick="switchMethod('m3',this)">Яўгенія Пфляўмбаўм · «Я маладая...»</div>
+<div class="method-tab" onclick="switchMethod('m4',this)">Ядвіга Бяганская · «Ноч»</div>
+<div class="method-tab" onclick="switchMethod('m5',this)">Зоська Верас · «Ліст»</div>
+<div class="method-tab" onclick="switchMethod('m7',this)">Ніна Тарас · «На ўсход ідучы»</div>
+<div class="method-tab" onclick="switchMethod('m8',this)">Ніна Мацяш · «І прыйдзе ноч, і ноч міне...»</div>
+<div class="method-tab" onclick="switchMethod('m9',this)">Яўгенія Янішчыц · «Мова»</div>
+<div class="method-tab" onclick="switchMethod('m10',this)">Раіса Баравікова · «Я — дзяўчынка на шары»</div>
+<div class="method-tab" onclick="switchMethod('m11',this)">Данута Бічэль-Загнетава · «Роднае слова»</div>
+<div class="method-tab" onclick="switchMethod('m12',this)">Людміла Рублеўская · «Шляхта»</div>
+</div>
+<div class="method-panel active reveal" id="m1">
+<div class="mcard">
+<div class="mcard-header">
+<div class="method-avatar"><img alt="Цётка" src="img/tsetka.jpg"/></div>
+<div class="mcard-meta"><h3>Цётка · «Хрэст на свабоду»</h3><p>Метадычная картка № 1 · Беларуская літаратура · 7–8 клас · 45 хвілін</p></div>
+</div>
+<div class="mcard-body">
+<div class="mcard-section"><div class="mcard-section-title">Агульная інфармацыя</div>
+<div class="mcard-3col">
+<div class="info-block"><div class="info-block-label">Клас</div><div class="info-block-val">7–8 клас</div></div>
+<div class="info-block"><div class="info-block-label">Тып урока</div><div class="info-block-val">Урок-даследаванне</div></div>
+<div class="info-block"><div class="info-block-label">Час</div><div class="info-block-val">45 хвілін</div></div>
+<div class="info-block"><div class="info-block-label">Біяграфічны трэк</div><div class="info-block-val">6 мін. 45 сек.</div></div>
+<div class="info-block"><div class="info-block-label">Трэк верша</div><div class="info-block-val">1 мін. 55 сек.</div></div>
+<div class="info-block"><div class="info-block-label">Форма работы</div><div class="info-block-val">Індывід. + групавая</div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Ход урока</div>
+<div class="lesson-steps">
+<div class="step"><div class="step-time">0–5 хв.</div><div class="step-content"><div class="step-title">Уваходны момант <span class="step-tag">Матывацыя</span></div><div class="step-desc">«Ці цяжка пісаць на мове, якую забаранілі?» — 2 хв. абмеркавання. Партрэт Цёткі на экране.</div></div></div>
+<div class="step"><div class="step-time">5–12 хв.</div><div class="step-content"><div class="step-title">Слуханне біяграфіі <span class="step-tag">Аўдыё А</span></div><div class="step-desc">Прайграць біяграфічны трэк (6:45). Вучні запісваюць: імя, даты, 3 ключавыя факты. Параўнаць у парах.</div></div></div>
+<div class="step"><div class="step-time">12–20 хв.</div><div class="step-content"><div class="step-title">Першае слуханне верша <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">Слухаць з закрытымі вачамі. Запісаць адно слова-асацыяцыю. Зачытаць па коле.</div></div></div>
+<div class="step"><div class="step-time">20–28 хв.</div><div class="step-content"><div class="step-title">Другое слуханне з тэкстам <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">Сочачы па тэксце, падкрэсліць словы, якія кранулі. Абмен у групах па 3–4.</div></div></div>
+<div class="step"><div class="step-time">28–38 хв.</div><div class="step-content"><div class="step-title">Абмеркаванне <span class="step-tag">Дыялог</span></div><div class="step-desc">Гутарка па пытаннях (гл. ніжэй). Настаўнік фасілітуе, не дае гатовых адказаў.</div></div></div>
+<div class="step"><div class="step-time">38–45 хв.</div><div class="step-content"><div class="step-title">Творчае заданне + рэфлексія <span class="step-tag">Практыка</span></div><div class="step-desc">Напісаць 3–5 радкоў ад імя Цёткі. «Сёння я даведаўся...» — завяршыць сказ.</div></div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Пытанні для абмеркавання</div>
+<div class="q-list">
+<div class="q-item"><span class="q-level">Веданне</span><span class="q-text">Хто такая Цётка? Якія факты яе жыцця вас уразілі найбольш?</span></div>
+<div class="q-item"><span class="q-level">Разуменне</span><span class="q-text">Чаму Цётка пісала па-беларуску, калі гэта было небяспечна?</span></div>
+<div class="q-item"><span class="q-level">Прымяненне</span><span class="q-text">Знайдзіце ў вершы словы, якія нясуць асноўную думку.</span></div>
+<div class="q-item"><span class="q-level">Аналіз</span><span class="q-text">Як слуханне адрозніваецца ад чытання з ліста? Што дае менавіта голас?</span></div>
+<div class="q-item"><span class="q-level">Сінтэз</span><span class="q-text">Калі б Цётка жыла сёння — пра што б яна пісала?</span></div>
+<div class="q-item"><span class="q-level">Ацэнка</span><span class="q-text">Ці лічыце вы, што Цётка зрабіла правільна, ахвяруючы бяспекай дзеля мовы?</span></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Творчыя заданні</div>
+<div class="creative-grid"><div class="creative-card"><h4>🎙 Чытанне з акцэнтам</h4><p>Запішыце чытанне «Хрэст на свабоду». Голасам вылучыце паўтор «так і трэба» і растлумачце, як ён ператвараецца ў іронію.</p></div><div class="creative-card"><h4>📰 Загаловак 1905 года</h4><p>Прыдумайце газетны загаловак, які перадае галоўны заклік верша. Дадайце 2–3 радкі тлумачэння.</p></div><div class="creative-card"><h4>⚖️ Суд над маўчаннем</h4><p>Падрыхтуйце маналог ад імя чалавека, які спачатку маўчыць, а пасля вырашае выказацца. Абапірайцеся на вобразы верша.</p></div><div class="creative-card"><h4>🎨 Плакат «Не маўчы»</h4><p>Стварыце плакат з ключавым радком і сімвалам свабоды. У подпісе растлумачце сувязь з вершам.</p></div><div class="creative-card"><h4>✏️ Ліст Цётцы</h4><p>Напісаць кароткі ліст Цётцы: расказаць, якой стала Беларусь сёння.</p></div><div class="creative-card"><h4>🔍 Мінідаследаванне</h4><p>Знайсці яшчэ адзін верш Цёткі, прынесці з кароткім каментарам.</p></div><div class="creative-card"><h4>🎨 Вобраз верша</h4><p>Намаляваць або апісаць вобраз, які ўзнік пры слуханні.</p></div></div>
+
+
+
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Крытэрыі ацэнкі</div>
+<table class="assess-table">
+<thead><tr><th>Крытэрый</th><th>3 балы</th><th>2 балы</th><th>1 бал</th></tr></thead>
+<tbody>
+<tr><td>Разуменне тэксту</td><td>Тлумачыць сэнс, прыводзіць прыклады</td><td>Агульнае разуменне</td><td>Паверхневыя адказы</td></tr>
+<tr><td>Сувязь з кантэкстам</td><td>Звязвае з біяграфіяй і эпохай</td><td>Частковая сувязь</td><td>Не звязвае</td></tr>
+<tr><td>Уласная думка</td><td>Выказвае і абгрунтоўвае погляд</td><td>Выказвае без абгрунтавання</td><td>Паўтарае думкі іншых</td></tr>
+</tbody>
+</table>
+<div class="qr-row">
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div></div>QR → Яе жыццё</div>
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div class="qr-d"></div></div>QR → Хрэст на свабоду</div>
+</div></div>
+</div>
+</div>
+</div>
+<div class="method-panel reveal" id="m3">
+<div class="mcard">
+<div class="mcard-header">
+<div class="method-avatar ph"><img alt="Яўгенія Пфляўмбаўм" src="img/pflaumbaum.jpg"/></div>
+<div class="mcard-meta"><h3>Яўгенія Пфляўмбаўм · «Я маладая...»</h3><p>Метадычная картка № 3 · Беларуская літаратура · 8–9 клас · 45 хвілін</p></div>
+</div>
+<div class="mcard-body">
+<div class="mcard-section"><div class="mcard-section-title">Агульная інфармацыя</div>
+<div class="mcard-3col">
+<div class="info-block"><div class="info-block-label">Клас</div><div class="info-block-val">8–9 клас</div></div>
+<div class="info-block"><div class="info-block-label">Тып урока</div><div class="info-block-val">Урок-даследаванне</div></div>
+<div class="info-block"><div class="info-block-label">Час</div><div class="info-block-val">45 хвілін</div></div>
+<div class="info-block"><div class="info-block-label">Біяграфічны трэк</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Трэк верша</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Форма работы</div><div class="info-block-val">Індывід. + пары</div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Ход урока</div>
+<div class="lesson-steps">
+<div class="step"><div class="step-time">0–5 хв.</div><div class="step-content"><div class="step-title">Уваходны момант <span class="step-tag">Матывацыя</span></div><div class="step-desc">«Што значыць быць маладым у 1926 годзе?»</div></div></div>
+<div class="step"><div class="step-time">5–12 хв.</div><div class="step-content"><div class="step-title">Біяграфія <span class="step-tag">Аўдыё А</span></div><div class="step-desc">БДУ, «Маладняк», Сібір, моўчанне і вяртанне ў 1980-я.</div></div></div>
+<div class="step"><div class="step-time">12–20 хв.</div><div class="step-content"><div class="step-title">Першае слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">адно слова-асацыяцыя.</div></div></div>
+<div class="step"><div class="step-time">20–28 хв.</div><div class="step-content"><div class="step-title">Другое слуханне з тэкстам <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">адзначыць паўторы і пачуцці.</div></div></div>
+<div class="step"><div class="step-time">28–38 хв.</div><div class="step-content"><div class="step-title">Абмеркаванне <span class="step-tag">Дыялог</span></div><div class="step-desc">што змяняе веданне лёсу аўтаркі?</div></div></div>
+<div class="step"><div class="step-time">38–45 хв.</div><div class="step-content"><div class="step-title">Творчае заданне + рэфлексія <span class="step-tag">Практыка</span></div><div class="step-desc">Ліст маладой Яўгеніі самой сабе праз 60 гадоў. Рэфлексія.</div></div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Пытанні для абмеркавання</div>
+<div class="q-list">
+<div class="q-item"><span class="q-level">Веданне</span><span class="q-text">Дзе вучылася аўтарка і ў якой літаратурнай суполцы была?</span></div>
+<div class="q-item"><span class="q-level">Разуменне</span><span class="q-text">Якую ролю адыгрывае паўтор «Я маладая»?</span></div>
+<div class="q-item"><span class="q-level">Прымяненне</span><span class="q-text">Знайдзіце словы, што перадаюць радасць і каханне.</span></div>
+<div class="q-item"><span class="q-level">Аналіз</span><span class="q-text">Як звычайны настрой верша спалучаецца з лёсам аўтаркі пасля 1933 г.?</span></div>
+<div class="q-item"><span class="q-level">Сінтэз</span><span class="q-text">Напішыце працяг верша ад 1989 года («Сувой жыцця»).</span></div>
+<div class="q-item"><span class="q-level">Ацэнка</span><span class="q-text">Ці змяняе знаёмства з біяграфіяй ваша ўспрыманне верша?</span></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Творчыя заданні</div>
+<div class="creative-grid"><div class="creative-card"><h4>🌱 Партрэт маладосці</h4><p>Стварыце словесны або візуальны партрэт маладосці паводле «Я маладая...». Уключыце тры вобразы з тэксту.</p></div><div class="creative-card"><h4>✍️ Маналог «Я сёння»</h4><p>Напішыце 6–8 сказаў ад імя лірычнай гераіні ў сучаснасці. Захавайце настрой верша, не капіруючы радкі.</p></div><div class="creative-card"><h4>🎭 Інтанацыйная партitura</h4><p>Падзяліце верш на часткі і пазначце тэмп, паўзы і вылучэнні. Абгрунтуйце два рашэнні.</p></div><div class="creative-card"><h4>💌 Паштоўка з радком</h4><p>Аформіце паштоўку, выбраўшы радок, які перадае радасць маладосці. Дадайце ўласнае пажаданне.</p></div><div class="creative-card"><h4>✏️ Ліст у мінулае</h4><p>Напішыце кароткі ліст або паведамленне аўтарцы: выкажыце ўражанне, прывядзіце радок і сфармулюйце пытанне.</p></div><div class="creative-card"><h4>🔍 Знайсці звесткі пра «Маладняк»</h4><p>Правядзіце невялікі пошук, выберыце 2–3 факты і падрыхтуйце кароткае паведамленне для класа.</p></div><div class="creative-card"><h4>🎨 Вобраз маладосці</h4><p>Стварыце малюнак або калаж паводле верша і дадайце радок-тлумачэнне сваёй задумкі.</p></div></div>
+
+
+
+</div></div>
+<div class="mcard-section extra-tasks"><div class="mcard-section-title">Дадатковыя заданні</div><ul class="objective-list"><li><span class="obj-dot"></span><span>Прааналізуйце, як паўтор «Я маладая» задае рытм і настрой верша. Падкрэсліце радкі, у якіх найбольш выразна гучыць радасць.</span></li><li><span class="obj-dot"></span><span>Знайдзіце ў тэксце метафары і параўнанні. Якія з іх перадаюць пачуццё кахання?</span></li><li><span class="obj-dot"></span><span>Напішыце 5–7 радкоў «Я маладая…» ад імя сучаснай дзяўчыны або юнака, захоўваючы паўтор як мастацкі прыём.</span></li><li><span class="obj-dot"></span><span>Падрыхтуйце кароткую аўдыя-дэкламацыю: вылучыце голасам паўторы і змяненне эмоцый у апошняй страфе.</span></li></ul></div><div class="qr-row">
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div></div>QR → Яе жыццё</div>
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div class="qr-d"></div></div>QR → Я маладая...</div>
+</div>
+</div>
+</div>
+
+<div class="method-panel reveal" id="m4">
+<div class="mcard">
+<div class="mcard-header">
+<div class="method-avatar ph"><img alt="Ядвіга Бяганская" src="img/byaganskaya.jpg"/></div>
+<div class="mcard-meta"><h3>Ядвіга Бяганская · «Ноч»</h3><p>Метадычная картка № 4 · Беларуская літаратура · 7–8 клас · 45 хвілін</p></div>
+</div>
+<div class="mcard-body">
+<div class="mcard-section"><div class="mcard-section-title">Агульная інфармацыя</div>
+<div class="mcard-3col">
+<div class="info-block"><div class="info-block-label">Клас</div><div class="info-block-val">7–8 клас</div></div>
+<div class="info-block"><div class="info-block-label">Тып урока</div><div class="info-block-val">Урок-пейзаж</div></div>
+<div class="info-block"><div class="info-block-label">Час</div><div class="info-block-val">45 хвілін</div></div>
+<div class="info-block"><div class="info-block-label">Біяграфічны трэк</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Трэк верша</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Форма работы</div><div class="info-block-val">Групавая</div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Ход урока</div>
+<div class="lesson-steps">
+<div class="step"><div class="step-time">0–5 хв.</div><div class="step-content"><div class="step-title">Уваходны момант <span class="step-tag">Матывацыя</span></div><div class="step-desc">«Якая тышыня бывае ноччу?»</div></div></div>
+<div class="step"><div class="step-time">5–12 хв.</div><div class="step-content"><div class="step-title">Біяграфія <span class="step-tag">Аўдыё А</span></div><div class="step-desc">нарадзілася ў Верхнеудзінску, першыя публікацыі ў 1926 г.</div></div></div>
+<div class="step"><div class="step-time">12–20 хв.</div><div class="step-content"><div class="step-title">Першае слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">адно слова-асацыяцыя.</div></div></div>
+<div class="step"><div class="step-time">20–28 хв.</div><div class="step-content"><div class="step-title">Другое слуханне з тэкстам <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">паўторы «маўчаць».</div></div></div>
+<div class="step"><div class="step-time">28–38 хв.</div><div class="step-content"><div class="step-title">Абмеркаванне <span class="step-tag">Дыялог</span></div><div class="step-desc">пейзаж і ўнутраны свет.</div></div></div>
+<div class="step"><div class="step-time">38–45 хв.</div><div class="step-content"><div class="step-title">Творчае заданне + рэфлексія <span class="step-tag">Практыка</span></div><div class="step-desc">5 радкоў «Ноч у сучасным горадзе». Рэфлексія.</div></div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Пытанні для абмеркавання</div>
+<div class="q-list">
+<div class="q-item"><span class="q-level">Веданне</span><span class="q-text">Калі пачала друкавацца Бяганская?</span></div>
+<div class="q-item"><span class="q-level">Разуменне</span><span class="q-text">Што стварае вобраз цішыні?</span></div>
+<div class="q-item"><span class="q-level">Прымяненне</span><span class="q-text">Знайдзіце словы пра прыроду і час сутак.</span></div>
+<div class="q-item"><span class="q-level">Аналіз</span><span class="q-text">Чаму ў канцы з’яўляюцца «думкі» і «сумпакой»?</span></div>
+<div class="q-item"><span class="q-level">Сінтэз</span><span class="q-text">Параўнайце з вершам «* * *» («Бягуць гады…») пра час.</span></div>
+<div class="q-item"><span class="q-level">Ацэнка</span><span class="q-text">Ці лічыце верш удалым пейзажам? Чаму?</span></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Творчыя заданні</div>
+<div class="creative-grid"><div class="creative-card"><h4>🌙 Слоўнік ночы</h4><p>Збярыце вобразы «Ночы» і падзяліце іх на спакойныя, трывожныя і светлыя.</p></div><div class="creative-card"><h4>🎧 Ноч як сцэна</h4><p>Складзіце план гукавога суправаджэння: тры гукі або паўзы. Патлумачце, які вобраз кожны падкрэслівае.</p></div><div class="creative-card"><h4>🖼 Трыпціх настрою</h4><p>Намалюйце тры кадры: пачатак, сярэдзіна і фінал верша. Пад кожным запішыце адпаведны вобраз.</p></div><div class="creative-card"><h4>✍️ Паведамленне ноччу</h4><p>Напішыце паведамленне ад імя лірычнай гераіні чалавеку, пра якога яна думае. Уключыце два вобразы верша.</p></div><div class="creative-card"><h4>✏️ Ноч у сучасным горадзе</h4><p>Выканайце заданне, абапіраючыся на верш: выберыце ключавы вобраз або радок і растлумачце, як ён раскрывае настрой і асноўную думку.</p></div><div class="creative-card"><h4>🔍 Аповесць «Моя Галгофа»: што ведаем пра яе</h4><p>Выканайце заданне, абапіраючыся на верш: выберыце ключавы вобраз або радок і растлумачце, як ён раскрывае настрой і асноўную думку.</p></div><div class="creative-card"><h4>🎨 Ілюстрацыя</h4><p>Стварыце малюнак або калаж паводле верша і дадайце радок-тлумачэнне сваёй задумкі.</p></div></div>
+
+
+
+</div></div>
+<div class="mcard-section extra-tasks"><div class="mcard-section-title">Дадатковыя заданні</div><ul class="objective-list"><li><span class="obj-dot"></span><span>Размяркуйце словы верша на дзве групы: «цішыня» і «рух». Як яны суіснуюць у пейзажы?</span></li><li><span class="obj-dot"></span><span>Знайдзіце эпітэты і ўвасабленні. Якія дэталі дапамагаюць уявіць ноч?</span></li><li><span class="obj-dot"></span><span>Параўнайце настрой «Ночы» з вершам «Бягуць гады…»: што агульнага ў разважанні пра час?</span></li><li><span class="obj-dot"></span><span>Стварыце міні-ілюстрацыю да адной страфы і дадайце 2–3 радкі тлумачэння выбраных колераў і дэталяў.</span></li></ul></div><div class="qr-row">
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div></div>QR → Яе жыццё</div>
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div class="qr-d"></div></div>QR → Ноч</div>
+</div>
+</div>
+</div>
+
+<div class="method-panel reveal" id="m5">
+<div class="mcard">
+<div class="mcard-header">
+<div class="method-avatar ph"><img alt="Зоська Верас" src="img/veras.jpg"/></div>
+<div class="mcard-meta"><h3>Зоська Верас · «Ліст»</h3><p>Метадычная картка № 5 · Беларуская літаратура · 7–8 клас · 45 хвілін</p></div>
+</div>
+<div class="mcard-body">
+<div class="mcard-section"><div class="mcard-section-title">Агульная інфармацыя</div>
+<div class="mcard-3col">
+<div class="info-block"><div class="info-block-label">Клас</div><div class="info-block-val">7–8 клас</div></div>
+<div class="info-block"><div class="info-block-label">Тып урока</div><div class="info-block-val">Урок з міжпрадметнымі сувязямі</div></div>
+<div class="info-block"><div class="info-block-label">Час</div><div class="info-block-val">45 хвілін</div></div>
+<div class="info-block"><div class="info-block-label">Біяграфічны трэк</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Трэк верша</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Форма работы</div><div class="info-block-val">Індывід. + групавая</div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Ход урока</div>
+<div class="lesson-steps">
+<div class="step"><div class="step-time">0–5 хв.</div><div class="step-content"><div class="step-title">Уваходны момант <span class="step-tag">Матывацыя</span></div><div class="step-desc">«Калі апошні раз вы пісалі ліст ад рукі?»</div></div></div>
+<div class="step"><div class="step-time">5–12 хв.</div><div class="step-content"><div class="step-title">Біяграфія <span class="step-tag">Аўдыё А</span></div><div class="step-desc">Людвіка Сівіцкая, батанічны слоўнік (1924), Гродзенскі гурток.</div></div></div>
+<div class="step"><div class="step-time">12–20 хв.</div><div class="step-content"><div class="step-title">Першае слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">слова-асацыяцыя.</div></div></div>
+<div class="step"><div class="step-time">20–28 хв.</div><div class="step-content"><div class="step-title">Другое слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">выпісаць, на чым хоча напісаць гераіня.</div></div></div>
+<div class="step"><div class="step-time">28–38 хв.</div><div class="step-content"><div class="step-title">Абмеркаванне <span class="step-tag">Дыялог</span></div><div class="step-desc">чаму ліст не адпраўлены.</div></div></div>
+<div class="step"><div class="step-time">38–45 хв.</div><div class="step-content"><div class="step-title">Творчае заданне + рэфлексія <span class="step-tag">Практыка</span></div><div class="step-desc">Ліст у сучасным фармаце. Рэфлексія.</div></div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Пытанні для абмеркавання</div>
+<div class="q-list">
+<div class="q-item"><span class="q-level">Веданне</span><span class="q-text">Чым яшчэ вядомая Зоська Верас, акрамя вершаў?</span></div>
+<div class="q-item"><span class="q-level">Разуменне</span><span class="q-text">Чаму пялёстак і матылёк не падыходзяць для ліста?</span></div>
+<div class="q-item"><span class="q-level">Прымяненне</span><span class="q-text">Знайдзіце ў вершы вобразы прыроды.</span></div>
+<div class="q-item"><span class="q-level">Аналіз</span><span class="q-text">Што паказвае вобраз ластаўкі?</span></div>
+<div class="q-item"><span class="q-level">Сінтэз</span><span class="q-text">Як змяніўся б верш, калі б ліст быў адпраўлены?</span></div>
+<div class="q-item"><span class="q-level">Ацэнка</span><span class="q-text">Чаму гераіня хацела напісаць менавіта так?</span></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Творчыя заданні</div>
+<div class="creative-grid"><div class="creative-card"><h4>✉️ Ліст, які не даходзіць</h4><p>Перакажыце гісторыю «Ліста» ў форме паведамлення. Уключыце прычыну, чаму яго не ўдаецца перадаць, і фінальную эмоцыю.</p></div><div class="creative-card"><h4>🕊 Маршрут ластаўкі</h4><p>Намалюйце маршрут ластаўкі як вестуна. На кожным этапе запішыце, што яна павінна перадаць адрасату.</p></div><div class="creative-card"><h4>🎭 Дыялог з адрасатам</h4><p>Складзіце дыялог з 6 рэплік: тры ад лірычнай гераіні і тры ад адрасата. Абапірайцеся на сітуацыю верша.</p></div><div class="creative-card"><h4>🔎 Паўтор як пульс</h4><p>Знайдзіце паўтор у вершы і прачытайце яго з рознай інтанацыяй. Напішыце, як ён узмацняе чаканне.</p></div><div class="creative-card"><h4>✏️ E-mail замест ліста</h4><p>Напішыце кароткі ліст або паведамленне аўтарцы: выкажыце ўражанне, прывядзіце радок і сфармулюйце пытанне.</p></div><div class="creative-card"><h4>🔍 Праект «Паэтка і батанік» (біялогія)</h4><p>Правядзіце невялікі пошук, выберыце 2–3 факты і падрыхтуйце кароткае паведамленне для класа.</p></div><div class="creative-card"><h4>🎨 Ліст на пялёстку</h4><p>Напішыце кароткі ліст або паведамленне аўтарцы: выкажыце ўражанне, прывядзіце радок і сфармулюйце пытанне.</p></div></div>
+
+
+
+</div></div>
+<div class="mcard-section extra-tasks"><div class="mcard-section-title">Дадатковыя заданні</div><ul class="objective-list"><li><span class="obj-dot"></span><span>Выпішыце ўсе спосабы, якімі лірычная гераіня спрабуе перадаць ліст. Чаму кожны з іх не працуе?</span></li><li><span class="obj-dot"></span><span>Вызначце, як паўтор «Хацела да цябе напісаці» арганізуе верш і ўзмацняе пачуццё.</span></li><li><span class="obj-dot"></span><span>Напішыце ліст ад рукі (8–10 сказаў) чалавеку, якому даўно хацелі нешта сказаць. Захавайце інтымны тон верша.</span></li><li><span class="obj-dot"></span><span>Праект у пары: складзіце «слоўнік прыродных вобразаў» верша і растлумачце, чаму аўтарка выбрала пялёстак, матылька і ластаўку.</span></li></ul></div><div class="qr-row">
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div></div>QR → Яе жыццё</div>
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div class="qr-d"></div></div>QR → Ліст</div>
+</div>
+</div>
+</div>
+
+<div class="method-panel reveal" id="m7">
+<div class="mcard">
+<div class="mcard-header">
+<div class="method-avatar ph"><img alt="Ніна Тарас" src="img/taras.jpg"/></div>
+<div class="mcard-meta"><h3>Ніна Тарас · «На ўсход ідучы»</h3><p>Метадычная картка № 7 · Беларуская літаратура · 9 клас · 45 хвілін</p></div>
+</div>
+<div class="mcard-body">
+<div class="mcard-section"><div class="mcard-section-title">Агульная інфармацыя</div>
+<div class="mcard-3col">
+<div class="info-block"><div class="info-block-label">Клас</div><div class="info-block-val">9 клас</div></div>
+<div class="info-block"><div class="info-block-label">Тып урока</div><div class="info-block-val">Урок-даследаванне</div></div>
+<div class="info-block"><div class="info-block-label">Час</div><div class="info-block-val">45 хвілін</div></div>
+<div class="info-block"><div class="info-block-label">Біяграфічны трэк</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Трэк верша</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Форма работы</div><div class="info-block-val">Індывід. + групавая</div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Ход урока</div>
+<div class="lesson-steps"> <div class="step"><div class="step-time">0–5 хв.</div><div class="step-content"><div class="step-title">Уваходны момант <span class="step-tag">Матывацыя</span></div><div class="step-desc">«Да каго мы звяртаемся, калі шукаем адказ на самае важнае пытанне?» Партрэт Ніны Тарас на экране.</div></div></div> <div class="step"><div class="step-time">5–12 хв.</div><div class="step-content"><div class="step-title">Біяграфія <span class="step-tag">Аўдыё А</span></div><div class="step-desc">Заполле, Віленская гімназія, першая публікацыя 1936 г., партызанская сувязная. Ключавыя факты запісаць у рабочы ліст.</div></div></div> <div class="step"><div class="step-time">12–20 хв.</div><div class="step-content"><div class="step-title">Першае слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">слова-асацыяцыя; пытанні гераіні да бяроз і іх адказ.</div></div></div> <div class="step"><div class="step-time">20–28 хв.</div><div class="step-content"><div class="step-title">Другое слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">знайсці словы пра дарогу, шчасце і песню; супаставіць «журботныя» песні і песню-марш.</div></div></div> <div class="step"><div class="step-time">28–38 хв.</div><div class="step-content"><div class="step-title">Абмеркаванне <span class="step-tag">Дыялог</span></div><div class="step-desc">паўтор «Шумелі, шумелі бярозанькі» ў пачатку і канцы; верш у кантэксце 1939–1940 гг.</div></div></div> <div class="step"><div class="step-time">38–45 хв.</div><div class="step-content"><div class="step-title">Творчае заданне + рэфлексія <span class="step-tag">Практыка</span></div><div class="step-desc">адказ бяроз у 3–4 радкі. Рэфлексія.</div></div></div> </div></div> <div class="mcard-section"><div class="mcard-section-title">Пытанні для абмеркавання</div>
+<div class="q-list"> <div class="q-item"><span class="q-level">Веданне</span><span class="q-text">Якой дарогай павінна ісці гераіня, паводле адказу бяроз?</span></div> <div class="q-item"><span class="q-level">Разуменне</span><span class="q-text">Што значыць «знайсці і песню, і долю» ў фінале?</span></div> <div class="q-item"><span class="q-level">Прымяненне</span><span class="q-text">Знайдзіце ў вершы персаніфікацыю, паўторы і эпітэты.</span></div> <div class="q-item"><span class="q-level">Аналіз</span><span class="q-text">Чым адрозніваюцца «сонная восень», «сум салаўя» і песня ў «сусветным» марше?</span></div> <div class="q-item"><span class="q-level">Сінтэз</span><span class="q-text">Складзіце кароткі дыялог гераіні з бярозамі: пытанне і адказ.</span></div> <div class="q-item"><span class="q-level">Ацэнка</span><span class="q-text">Ці пераканаў вас фінал верша? Што ў ім звязана з часам напісання?</span></div> </div></div> <div class="mcard-section"><div class="mcard-section-title">Творчыя заданні</div>
+<div class="creative-grid"><div class="creative-card"><h4>🌳 Адказ бяроз</h4><p>Напішыце адказ бяроз гераіні ў 3–4 радкі, пачынаючы са слоў «Шумелі бярозы…».</p></div><div class="creative-card"><h4>🎙 Чытанне верша</h4><p>Прачытайце верш, перадаючы пераход ад роздуму да ўпэўненасці. Пазначце паўзы і растлумачце іх.</p></div><div class="creative-card"><h4>🗺 Карта шляху</h4><p>Намалюйце карту дарогі гераіні па вершы: пазначце пытанні, адказ бяроз і фінал.</p></div><div class="creative-card"><h4>🎶 Дзве песні</h4><p>Супастаўце «журботныя» песні і песню-марш: выпішыце вобразы і словы і растлумачце розніцу.</p></div><div class="creative-card"><h4>✏️ Ліст Ніне Тарас</h4><p>Напішыце кароткі ліст або паведамленне аўтарцы: выкажыце ўражанне, прывядзіце радок і сфармулюйце пытанне.</p></div></div></div></div><div class="mcard-section extra-tasks"><div class="mcard-section-title">Дадатковыя заданні</div><ul class="objective-list"><li><span class="obj-dot"></span><span>Адзначце ў тэксце словы дарогі, шчасця і песні рознымі знакамі. Як яны звязаны паміж сабой?</span></li><li><span class="obj-dot"></span><span>Прааналізуйце паўтор радкоў «Шумелі, шумелі бярозанькі» ў пачатку і канцы: як ён змяняе ўражанне ад верша?</span></li><li><span class="obj-dot"></span><span>Падрыхтуйце групавую міні-прэзентацыю «Верш і час яго напісання»: выкарыстайце 2–3 цытаты і растлумачце, якія настроі эпохі ў іх бачныя.</span></li></ul></div><div class="qr-row">
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div></div>QR → Яе жыццё</div>
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div class="qr-d"></div></div>QR → На ўсход ідучы</div>
+</div>
+</div>
+</div>
+
+<div class="method-panel reveal" id="m8">
+<div class="mcard">
+<div class="mcard-header">
+<div class="method-avatar"><img alt="Ніна Мацяш" src="img/matsyash.jpg"/></div>
+<div class="mcard-meta"><h3>Ніна Мацяш · «І прыйдзе ноч, і ноч міне...»</h3><p>Метадычная картка № 8 · Беларуская літаратура · 10–11 клас · 45 хвілін</p></div>
+</div>
+<div class="mcard-body">
+<div class="mcard-section"><div class="mcard-section-title">Агульная інфармацыя</div>
+<div class="mcard-3col">
+<div class="info-block"><div class="info-block-label">Клас</div><div class="info-block-val">10–11 клас</div></div>
+<div class="info-block"><div class="info-block-label">Тып урока</div><div class="info-block-val">Урок-роздум</div></div>
+<div class="info-block"><div class="info-block-label">Час</div><div class="info-block-val">45 хвілін</div></div>
+<div class="info-block"><div class="info-block-label">Біяграфічны трэк</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Трэк верша</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Форма работы</div><div class="info-block-val">Індывід. + дыскусія</div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Ход урока</div>
+<div class="lesson-steps">
+<div class="step"><div class="step-time">0–5 хв.</div><div class="step-content"><div class="step-title">Уваходны момант <span class="step-tag">Матывацыя</span></div><div class="step-desc">«Што ў сучасным свеце крохкае, а што трывалае?»</div></div></div>
+<div class="step"><div class="step-time">5–12 хв.</div><div class="step-content"><div class="step-title">Біяграфія <span class="step-tag">Аўдыё А</span></div><div class="step-desc">Нівы, прэмія імя Куляшова (1984), Белаазёрск (1973–1977), «Богава дрэва».</div></div></div>
+<div class="step"><div class="step-time">12–20 хв.</div><div class="step-content"><div class="step-title">Першае слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">слова-асацыяцыя.</div></div></div>
+<div class="step"><div class="step-time">20–28 хв.</div><div class="step-content"><div class="step-title">Другое слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">супрацьпастаўленне дня і «пялёстка».</div></div></div>
+<div class="step"><div class="step-time">28–38 хв.</div><div class="step-content"><div class="step-title">Абмеркаванне <span class="step-tag">Дыялог</span></div><div class="step-desc">Дыскусія па пытаннях.</div></div></div>
+<div class="step"><div class="step-time">38–45 хв.</div><div class="step-content"><div class="step-title">Творчае заданне + рэфлексія <span class="step-tag">Практыка</span></div><div class="step-desc">Мініэсэ «Мая крохкая сіла». Рэфлексія.</div></div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Пытанні для абмеркавання</div>
+<div class="q-list">
+<div class="q-item"><span class="q-level">Веданне</span><span class="q-text">За што і калі Мацяш атрымала прэмію імя Куляшова?</span></div>
+<div class="q-item"><span class="q-level">Разуменне</span><span class="q-text">Што супрацьпастаўлена ў вершы?</span></div>
+<div class="q-item"><span class="q-level">Прымяненне</span><span class="q-text">Знайдзіце словы, звязаныя з тэхнікай, і словы пра душу.</span></div>
+<div class="q-item"><span class="q-level">Аналіз</span><span class="q-text">Як разумець «бяссмерце надзей»?</span></div>
+<div class="q-item"><span class="q-level">Сінтэз</span><span class="q-text">Напішыце адказ верша ад імя «дня».</span></div>
+<div class="q-item"><span class="q-level">Ацэнка</span><span class="q-text">Ці пераканаў вас фінал верша? Чаму?</span></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Творчыя заданні</div>
+<div class="creative-grid"><div class="creative-card"><h4>🌱 Ноч і дзень</h4><p>Знайдзіце два супрацьпастаўленыя вобразы ў вершы. Складзіце табліцу «ноч / дзень» і растлумачце, як яны раскрываюць надзею.</p></div><div class="creative-card"><h4>🖼 Пялёстак як сімвал</h4><p>Намалюйце «пялёстак кволы» і «бязлітасны дзень». Дадайце 3–4 сказы пра сэнс супрацьпастаўлення.</p></div><div class="creative-card"><h4>✍️ Міні-эсэ пра чуласць</h4><p>Напішыце 5–7 сказаў на тэму «Ці патрэбна чуласць у вялікім свеце?», абапіраючыся на верш.</p></div><div class="creative-card"><h4>🎭 Два голасы</h4><p>Падрыхтуйце невялікую сцэнку, у якой адзін голас перадае кволасць, а другі — сілу дня. Завяршыце радком з верша.</p></div><div class="creative-card"><h4>✏️ Ліст Ніне Мацяш</h4><p>Напішыце кароткі ліст або паведамленне аўтарцы: выкажыце ўражанне, прывядзіце радок і сфармулюйце пытанне.</p></div><div class="creative-card"><h4>🔍 Знайсці яшчэ верш з крыніцай</h4><p>Правядзіце невялікі пошук, выберыце 2–3 факты і падрыхтуйце кароткае паведамленне для класа.</p></div><div class="creative-card"><h4>🎨 Вобраз пялёстка і брані</h4><p>Стварыце малюнак або калаж паводле верша і дадайце радок-тлумачэнне сваёй задумкі.</p></div></div>
+
+
+
+</div></div>
+<div class="qr-row">
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div></div>QR → Яе жыццё</div>
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div class="qr-d"></div></div>QR → І прыйдзе ноч, і ноч міне...</div>
+</div>
+</div>
+</div>
+
+<div class="method-panel reveal" id="m9">
+<div class="mcard">
+<div class="mcard-header">
+<div class="method-avatar"><img alt="Еўгенія Янішчыц" src="img/yanishchyts.jpg"/></div>
+<div class="mcard-meta"><h3>Яўгенія Янішчыц · «Мова»</h3><p>Метадычная картка № 9 · Беларуская літаратура · 5–7 клас · 45 хвілін</p></div>
+</div>
+<div class="mcard-body">
+<div class="mcard-section"><div class="mcard-section-title">Агульная інфармацыя</div>
+<div class="mcard-3col">
+<div class="info-block"><div class="info-block-label">Клас</div><div class="info-block-val">5–7 клас</div></div>
+<div class="info-block"><div class="info-block-label">Тып урока</div><div class="info-block-val">Урок-эсэ</div></div>
+<div class="info-block"><div class="info-block-label">Час</div><div class="info-block-val">45 хвілін</div></div>
+<div class="info-block"><div class="info-block-label">Біяграфічны трэк</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Трэк верша</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Форма работы</div><div class="info-block-val">Індывід. + пары</div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Ход урока</div>
+<div class="lesson-steps">
+<div class="step"><div class="step-time">0–5 хв.</div><div class="step-content"><div class="step-title">Уваходны момант <span class="step-tag">Матывацыя</span></div><div class="step-desc">«Якое ваша любімае беларускае слова?»</div></div></div>
+<div class="step"><div class="step-time">5–12 хв.</div><div class="step-content"><div class="step-title">Біяграфія <span class="step-tag">Аўдыё А</span></div><div class="step-desc">Рудка, БДУ, «Снежныя грамніцы» (1970), «Маладосць».</div></div></div>
+<div class="step"><div class="step-time">12–20 хв.</div><div class="step-content"><div class="step-title">Першае слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">слова-асацыяцыя.</div></div></div>
+<div class="step"><div class="step-time">20–28 хв.</div><div class="step-content"><div class="step-title">Другое слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">выпісаць вобразы мовы.</div></div></div>
+<div class="step"><div class="step-time">28–38 хв.</div><div class="step-content"><div class="step-title">Абмеркаванне <span class="step-tag">Дыялог</span></div><div class="step-desc">«заворвалі і закопвалі».</div></div></div>
+<div class="step"><div class="step-time">38–45 хв.</div><div class="step-content"><div class="step-title">Творчае заданне + рэфлексія <span class="step-tag">Практыка</span></div><div class="step-desc">Мініэсэ «Мова ў маёй сям’і». Рэфлексія.</div></div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Пытанні для абмеркавання</div>
+<div class="q-list">
+<div class="q-item"><span class="q-level">Веданне</span><span class="q-text">Каму прысвечаны верш?</span></div>
+<div class="q-item"><span class="q-level">Разуменне</span><span class="q-text">Чаму мова параўнана з сонцам?</span></div>
+<div class="q-item"><span class="q-level">Прымяненне</span><span class="q-text">Знайдзіце вобразы з прыроды.</span></div>
+<div class="q-item"><span class="q-level">Аналіз</span><span class="q-text">Што азначае, што мову «заворвалі і закопвалі»?</span></div>
+<div class="q-item"><span class="q-level">Сінтэз</span><span class="q-text">Складзіце 4 радкі пра сваё любімае слова.</span></div>
+<div class="q-item"><span class="q-level">Ацэнка</span><span class="q-text">Чаму «вялікая любоў» змяшчаецца ў «маленькім» сэрцы?</span></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Творчыя заданні</div>
+<div class="creative-grid"><div class="creative-card"><h4>🗣 Мова ў трох вобразах</h4><p>Знайдзіце ў вершы «Мова» тры вобразы, якія раскрываюць значэнне роднага слова. Для кожнага запішыце кароткае тлумачэнне.</p></div><div class="creative-card"><h4>🎨 Абкладынка для верша</h4><p>Стварыце абкладынку «Мова»: назва, колер і сімвал. У подпісе растлумачце, як дызайн адлюстроўвае думку верша.</p></div><div class="creative-card"><h4>✍️ Маналог роднага слова</h4><p>Напішыце 5–7 сказаў ад імя роднай мовы, выкарыстоўваючы настрой і адзін вобраз з верша.</p></div><div class="creative-card"><h4>🎙 Выразнае чытанне</h4><p>Пазначце ў вершы словы, якія трэба вылучыць голасам. Запішыце чытанне і растлумачце свае інтанацыйныя рашэнні.</p></div><div class="creative-card"><h4>✏️ Ліст Мове</h4><p>Напішыце кароткі ліст або паведамленне аўтарцы: выкажыце ўражанне, прывядзіце радок і сфармулюйце пытанне.</p></div><div class="creative-card"><h4>🔍 Апытанне старэйшых пра словы</h4><p>Выканайце заданне, абапіраючыся на верш: выберыце ключавы вобраз або радок і растлумачце, як ён раскрывае настрой і асноўную думку.</p></div><div class="creative-card"><h4>🎨 Малюнак «Мова-жаўрук»</h4><p>Выканайце заданне, абапіраючыся на верш: выберыце ключавы вобраз або радок і растлумачце, як ён раскрывае настрой і асноўную думку.</p></div></div>
+
+
+
+</div></div>
+<div class="qr-row">
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div></div>QR → Яе жыццё</div>
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div class="qr-d"></div></div>QR → Мова</div>
+</div>
+</div>
+</div>
+
+<div class="method-panel reveal" id="m10">
+<div class="mcard">
+<div class="mcard-header">
+<div class="method-avatar"><img alt="Раіса Баравікова" src="img/baravikova.jpg"/></div>
+<div class="mcard-meta"><h3>Раіса Баравікова · «Я — дзяўчынка на шары»</h3><p>Метадычная картка № 10 · Беларуская літаратура · 8–9 клас · 45 хвілін</p></div>
+</div>
+<div class="mcard-body">
+<div class="mcard-section"><div class="mcard-section-title">Агульная інфармацыя</div>
+<div class="mcard-3col">
+<div class="info-block"><div class="info-block-label">Клас</div><div class="info-block-val">8–9 клас</div></div>
+<div class="info-block"><div class="info-block-label">Тып урока</div><div class="info-block-val">Урок-даследаванне вобразаў</div></div>
+<div class="info-block"><div class="info-block-label">Час</div><div class="info-block-val">45 хвілін</div></div>
+<div class="info-block"><div class="info-block-label">Біяграфічны трэк</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Трэк верша</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Форма работы</div><div class="info-block-val">Індывід. + групавая</div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Ход урока</div>
+<div class="lesson-steps">
+<div class="step"><div class="step-time">0–5 хв.</div><div class="step-content"><div class="step-title">Уваходны момант <span class="step-tag">Матывацыя</span></div><div class="step-desc">«Што значыць быць лёгкім, як пушынка?»</div></div></div>
+<div class="step"><div class="step-time">5–12 хв.</div><div class="step-content"><div class="step-title">Біяграфія <span class="step-tag">Аўдыё А</span></div><div class="step-desc">Пешкі, Літінстытут (1971), «Рамонкавы бераг», «Маладосць».</div></div></div>
+<div class="step"><div class="step-time">12–20 хв.</div><div class="step-content"><div class="step-title">Першае слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">слова-асацыяцыя.</div></div></div>
+<div class="step"><div class="step-time">20–28 хв.</div><div class="step-content"><div class="step-title">Другое слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">падкрэсліць касмічныя і зямныя вобразы.</div></div></div>
+<div class="step"><div class="step-time">28–38 хв.</div><div class="step-content"><div class="step-title">Абмеркаванне <span class="step-tag">Дыялог</span></div><div class="step-desc">міф і эпоха 1960-х.</div></div></div>
+<div class="step"><div class="step-time">38–45 хв.</div><div class="step-content"><div class="step-title">Творчае заданне + рэфлексія <span class="step-tag">Практыка</span></div><div class="step-desc">Вобраз «Я — на шары». Рэфлексія.</div></div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Пытанні для абмеркавання</div>
+<div class="q-list">
+<div class="q-item"><span class="q-level">Веданне</span><span class="q-text">Якія прэміі атрымала Баравікова?</span></div>
+<div class="q-item"><span class="q-level">Разуменне</span><span class="q-text">Што азначае вобраз «дзяўчынкі на шары»?</span></div>
+<div class="q-item"><span class="q-level">Прымяненне</span><span class="q-text">Знайдзіце астранамічныя і прыродныя вобразы.</span></div>
+<div class="q-item"><span class="q-level">Аналіз</span><span class="q-text">Як звязаны бязважкасць і адчуванне радзімы-планеты?</span></div>
+<div class="q-item"><span class="q-level">Сінтэз</span><span class="q-text">Напішыце сучасны варыянт верша.</span></div>
+<div class="q-item"><span class="q-level">Ацэнка</span><span class="q-text">Што ў вершы можна лічыць галоўным?</span></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Творчыя заданні</div>
+<div class="creative-grid"><div class="creative-card"><h4>🎈 Шар як сцэна</h4><p>Намалюйце шар, на якім знаходзіцца лірычная гераіня. Дадайце 3 дэталі, якія перадаюць яе настрой, і растлумачце іх.</p></div><div class="creative-card"><h4>🎭 Маналог дзяўчынкі</h4><p>Напішыце маналог ад імя дзяўчынкі на шары: 6–8 сказаў пра тое, што яна бачыць і адчувае.</p></div><div class="creative-card"><h4>🧭 Падарожжа ўверх</h4><p>Складзіце маршрут з 4 пунктаў: ад зямлі да шара і назад. Кожны пункт звяжыце з вобразам або думкай верша.</p></div><div class="creative-card"><h4>🎨 Паштоўка з вышыні</h4><p>Стварыце паштоўку з вышыні шара. Выберыце адзін радок, які стане подпісам, і растлумачце выбар.</p></div><div class="creative-card"><h4>✏️ Ліст Раісе Баравіковай</h4><p>Напішыце кароткі ліст або паведамленне аўтарцы: выкажыце ўражанне, прывядзіце радок і сфармулюйце пытанне.</p></div><div class="creative-card"><h4>🔍 Касмічная эра 1960-х</h4><p>Выканайце заданне, абапіраючыся на верш: выберыце ключавы вобраз або радок і растлумачце, як ён раскрывае настрой і асноўную думку.</p></div><div class="creative-card"><h4>🎨 Ілюстрацыя</h4><p>Стварыце малюнак або калаж паводле верша і дадайце радок-тлумачэнне сваёй задумкі.</p></div></div>
+
+
+
+</div></div>
+<div class="qr-row">
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div></div>QR → Яе жыццё</div>
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div class="qr-d"></div></div>QR → Я — дзяўчынка на шары</div>
+</div>
+</div>
+</div>
+
+<div class="method-panel reveal" id="m11">
+<div class="mcard">
+<div class="mcard-header">
+<div class="method-avatar"><img alt="Данута Бічэль" src="img/bichel.jpg"/></div>
+<div class="mcard-meta"><h3>Данута Бічэль-Загнетава · «Роднае слова»</h3><p>Метадычная картка № 11 · Беларуская літаратура · 9–11 клас · 45 хвілін</p></div>
+</div>
+<div class="mcard-body">
+<div class="mcard-section"><div class="mcard-section-title">Агульная інфармацыя</div>
+<div class="mcard-3col">
+<div class="info-block"><div class="info-block-label">Клас</div><div class="info-block-val">9–11 клас</div></div>
+<div class="info-block"><div class="info-block-label">Тып урока</div><div class="info-block-val">Урок-роздум</div></div>
+<div class="info-block"><div class="info-block-label">Час</div><div class="info-block-val">45 хвілін</div></div>
+<div class="info-block"><div class="info-block-label">Біяграфічны трэк</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Трэк верша</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Форма работы</div><div class="info-block-val">Пары + група</div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Ход урока</div>
+<div class="lesson-steps">
+<div class="step"><div class="step-time">0–5 хв.</div><div class="step-content"><div class="step-title">Уваходны момант <span class="step-tag">Матывацыя</span></div><div class="step-desc">«Якое слова вы кажаце часцей за ўсё?»</div></div></div>
+<div class="step"><div class="step-time">5–12 хв.</div><div class="step-content"><div class="step-title">Біяграфія <span class="step-tag">Аўдыё А</span></div><div class="step-desc">Біскупцы, Гродна, Музей Багдановіча, «Дзе ходзяць басанож».</div></div></div>
+<div class="step"><div class="step-time">12–20 хв.</div><div class="step-content"><div class="step-title">Першае слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">слова-асацыяцыя.</div></div></div>
+<div class="step"><div class="step-time">20–28 хв.</div><div class="step-content"><div class="step-title">Другое слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">сачыць за словам «кахаю».</div></div></div>
+<div class="step"><div class="step-time">28–38 хв.</div><div class="step-content"><div class="step-title">Абмеркаванне <span class="step-tag">Дыялог</span></div><div class="step-desc">Абмеркаванне параўнанняў (сонца, Нёман, казка, песня).</div></div></div>
+<div class="step"><div class="step-time">38–45 хв.</div><div class="step-content"><div class="step-title">Творчае заданне + рэфлексія <span class="step-tag">Практыка</span></div><div class="step-desc">Слоўнік вобразаў, чытанне дыялогам.</div></div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Пытанні для абмеркавання</div>
+<div class="q-list">
+<div class="q-item"><span class="q-level">Веданне</span><span class="q-text">Дзе і калі нарадзілася Данута Бічэль?</span></div>
+<div class="q-item"><span class="q-level">Разуменне</span><span class="q-text">Як слова «кахаю» мяняе сэнс да канца верша?</span></div>
+<div class="q-item"><span class="q-level">Прымяненне</span><span class="q-text">Знайдзіце ўсе параўнанні.</span></div>
+<div class="q-item"><span class="q-level">Аналіз</span><span class="q-text">Як звязаны каханне і любоў да краю?</span></div>
+<div class="q-item"><span class="q-level">Сінтэз</span><span class="q-text">Складзіце 4 радкі пра родны горад ці вёску.</span></div>
+<div class="q-item"><span class="q-level">Ацэнка</span><span class="q-text">Які вобраз у вершы здаецца вам найбольш удалым?</span></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Творчыя заданні</div>
+<div class="creative-grid"><div class="creative-card"><h4>🌼 Роднае слова ў сям’і</h4><p>Запішыце 5 беларускіх слоў, якія часта гучаць у вашай сям’і. Выберыце адно і растлумачце, чаму яно вам роднае.</p></div><div class="creative-card"><h4>🎨 Слова ў малюнку</h4><p>Стварыце малюнак да «Роднае слова», выкарыстоўваючы адзін вобраз з верша. Дадайце подпіс з уласным тлумачэннем.</p></div><div class="creative-card"><h4>🎙 Сямейнае чытанне</h4><p>Прачытайце верш разам з членам сям’і або сябрам. Параўнайце, якія радкі кожнаму здаюцца найбольш важнымі.</p></div><div class="creative-card"><h4>✍️ Ліст роднаму слову</h4><p>Напішыце кароткі ліст роднаму слову: падзякуйце за тое, што яно захоўвае, і прывядзіце адзін радок з верша.</p></div><div class="creative-card"><h4>✏️ Ліст Дануце Бічэль</h4><p>Напішыце кароткі ліст або паведамленне аўтарцы: выкажыце ўражанне, прывядзіце радок і сфармулюйце пытанне.</p></div><div class="creative-card"><h4>🔍 Нёман у паэзіі</h4><p>Выканайце заданне, абапіраючыся на верш: выберыце ключавы вобраз або радок і растлумачце, як ён раскрывае настрой і асноўную думку.</p></div><div class="creative-card"><h4>🎨 Вобраз «казачнага дуба»</h4><p>Стварыце малюнак або калаж паводле верша і дадайце радок-тлумачэнне сваёй задумкі.</p></div></div>
+
+
+
+</div></div>
+<div class="qr-row">
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div></div>QR → Яе жыццё</div>
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div class="qr-d"></div></div>QR → Роднае слова</div>
+</div>
+</div>
+</div>
+
+<div class="method-panel reveal" id="m12">
+<div class="mcard">
+<div class="mcard-header">
+<div class="method-avatar"><img alt="Людміла Рублеўская" src="img/rubleuskaya.jpg"/></div>
+<div class="mcard-meta"><h3>Людміла Рублеўская · «Шляхта»</h3><p>Метадычная картка № 12 · Беларуская літаратура · 10–11 клас · 45 хвілін</p></div>
+</div>
+<div class="mcard-body">
+<div class="mcard-section"><div class="mcard-section-title">Агульная інфармацыя</div>
+<div class="mcard-3col">
+<div class="info-block"><div class="info-block-label">Клас</div><div class="info-block-val">10–11 клас</div></div>
+<div class="info-block"><div class="info-block-label">Тып урока</div><div class="info-block-val">Урок-дыскусія</div></div>
+<div class="info-block"><div class="info-block-label">Час</div><div class="info-block-val">45 хвілін</div></div>
+<div class="info-block"><div class="info-block-label">Біяграфічны трэк</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Трэк верша</div><div class="info-block-val">паводле запісу</div></div>
+<div class="info-block"><div class="info-block-label">Форма работы</div><div class="info-block-val">Дыскусія</div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Ход урока</div>
+<div class="lesson-steps">
+<div class="step"><div class="step-time">0–5 хв.</div><div class="step-content"><div class="step-title">Уваходны момант <span class="step-tag">Матывацыя</span></div><div class="step-desc">«Ці можна жыць на зямлі і не адчуваць яе сваёй?»</div></div></div>
+<div class="step"><div class="step-time">5–12 хв.</div><div class="step-content"><div class="step-title">Біяграфія <span class="step-tag">Аўдыё А</span></div><div class="step-desc">Мінск, Саюз пісьменнікаў з 1990 г., гістарычныя дэтэктывы.</div></div></div>
+<div class="step"><div class="step-time">12–20 хв.</div><div class="step-content"><div class="step-title">Першае слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">слова-асацыяцыя.</div></div></div>
+<div class="step"><div class="step-time">20–28 хв.</div><div class="step-content"><div class="step-title">Другое слуханне <span class="step-tag">Аўдыё Б</span></div><div class="step-desc">«мы» і «яны».</div></div></div>
+<div class="step"><div class="step-time">28–38 хв.</div><div class="step-content"><div class="step-title">Абмеркаванне <span class="step-tag">Дыялог</span></div><div class="step-desc">Дыскусія па пытаннях.</div></div></div>
+<div class="step"><div class="step-time">38–45 хв.</div><div class="step-content"><div class="step-title">Творчае заданне + рэфлексія <span class="step-tag">Практыка</span></div><div class="step-desc">Эсэ-мініяцюра. Рэфлексія.</div></div></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Пытанні для абмеркавання</div>
+<div class="q-list">
+<div class="q-item"><span class="q-level">Веданне</span><span class="q-text">Што вядома пра Рублеўскую як празаіка?</span></div>
+<div class="q-item"><span class="q-level">Разуменне</span><span class="q-text">Хто такія «бязродныя кветкі-прыкрасы»?</span></div>
+<div class="q-item"><span class="q-level">Прымяненне</span><span class="q-text">Знайдзіце словы пра шляхту і сялян.</span></div>
+<div class="q-item"><span class="q-level">Аналіз</span><span class="q-text">Якую ролю маюць званы і вальсы Штрауса?</span></div>
+<div class="q-item"><span class="q-level">Сінтэз</span><span class="q-text">Напішыце гісторыю «з боку сялян».</span></div>
+<div class="q-item"><span class="q-level">Ацэнка</span><span class="q-text">Ці справядліва аўтарка апісвае шляхту?</span></div>
+</div></div>
+<div class="mcard-section"><div class="mcard-section-title">Творчыя заданні</div>
+<div class="creative-grid"><div class="creative-card"><h4>🏰 Шляхта і сучаснасць</h4><p>Вызначце, якія гістарычныя або культурныя вобразы прысутнічаюць у «Шляхта». Складзіце 3 пытанні для абмеркавання.</p></div><div class="creative-card"><h4>🧩 Словаўтваральная карта</h4><p>Збярыце ключавыя словы верша ў карту: цэнтр — галоўная тэма, вакол — вобразы і асацыяцыі.</p></div><div class="creative-card"><h4>🎙 Чытанне з ролямі</h4><p>Падзяліце верш на голас апавядальніка і голас героя. Падрыхтуйце чытанне з рознымі інтанацыямі.</p></div><div class="creative-card"><h4>✍️ Мікраэсэ</h4><p>Напішыце 7–9 сказаў: як літаратура дапамагае ўбачыць гісторыю і культурную памяць? Прывядзіце прыклад з верша.</p></div><div class="creative-card"><h4>✏️ Ліст шляхціцу</h4><p>Напішыце кароткі ліст або паведамленне аўтарцы: выкажыце ўражанне, прывядзіце радок і сфармулюйце пытанне.</p></div><div class="creative-card"><h4>🔍 Сацыяльныя групы XIX ст.</h4><p>Выканайце заданне, абапіраючыся на верш: выберыце ключавы вобраз або радок і растлумачце, як ён раскрывае настрой і асноўную думку.</p></div><div class="creative-card"><h4>🎨 Бал і каляіна</h4><p>Выканайце заданне, абапіраючыся на верш: выберыце ключавы вобраз або радок і растлумачце, як ён раскрывае настрой і асноўную думку.</p></div></div>
+
+
+
+</div></div>
+<div class="qr-row">
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div></div>QR → Яе жыццё</div>
+<div class="qr-badge"><div class="qr-sq"><div class="qr-d"></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div></div><div class="qr-d"></div><div class="qr-d"></div></div>QR → Шляхта</div>
+</div>
+</div>
+</div>
+
+
+</section>
+<section class="sec-bg-teacher" id="teacher">
+<div class="sec-body">
+<span class="section-label reveal">Настаўніку</span>
+<h2 class="section-title reveal">Гатовыя матэрыялы для ўрока</h2>
+<p class="teacher-intro reveal">Матэрыялы па кожнай аўтарцы: план урока і гатовы рабочы ліст для вучняў.</p>
+
+<div class="teacher-grid reveal">
+<div class="teacher-block">
+<div class="teacher-icon"><svg viewbox="0 0 24 24"><rect height="18" rx="2" width="16" x="4" y="3"></rect><line x1="8" x2="16" y1="8" y2="8"></line><line x1="8" x2="16" y1="12" y2="12"></line><line x1="8" x2="13" y1="16" y2="16"></line></svg></div>
+<h3>Планы ўрокаў па кожнай аўтарцы</h3>
+<p>11 планаў урокаў · Фармат А4 (docx) · 45 хвілін. Мэты, этапы заняткаў, пытанні да тэксту, творчыя заданні, рэфлексія і крытэрыі ацэнкі. Кожны план распрацаваны з улікам канкрэтнага верша.</p>
+<button class="btn-ghost" onclick="document.getElementById('lesson-plans-details').open=true;document.getElementById('lesson-plans-list').scrollIntoView({behavior:'smooth'})">Выбраць аўтарку</button>
+</div>
+<div class="teacher-block">
+<div class="teacher-icon"><svg viewbox="0 0 24 24"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z"></path><path d="M4 4.5v17M8 6h8M8 10h8M8 14h6"></path></svg></div>
+<h3>Гатовыя рабочыя лісты</h3>
+<p>Рабочыя лісты для кожнай аўтаркі: заданні на разуменне верша, аналіз вобразаў, выразнае чытанне і творчы адказ. Вучань можа запаўняць іх на ўроку або самастойна.</p>
+<button class="btn-ghost" onclick="document.getElementById('worksheets-details').open=true;document.getElementById('worksheets-list').scrollIntoView({behavior:'smooth'})">Выбраць аўтарку</button>
+</div>
+</div>
+<div class="teacher-author-lists">
+<details class="teacher-material-list teacher-author-details" id="lesson-plans-details"><summary>Паказаць аўтарак і планы ўрокаў</summary><div id="lesson-plans-list">
+<h3>Планы ўрокаў</h3>
+<div class="teacher-author-grid">
+<div class="teacher-author-item"><strong>Цётка</strong><span>«Хрэст на свабоду»</span><button class="btn-ghost" data-author="Цётка" data-material="lesson" data-key="tsetka" type="button">План урока</button></div>
+<div class="teacher-author-item"><strong>Канстанцыя Буйло</strong><span>«Мяцеліца»</span><button class="btn-ghost" data-author="Канстанцыя Буйло" data-material="lesson" data-key="buylo" type="button">План урока</button></div>
+<div class="teacher-author-item"><strong>Еўгенія Янішчыц</strong><span>«Мова»</span><button class="btn-ghost" data-author="Еўгенія Янішчыц" data-material="lesson" data-key="yanishchyts" type="button">План урока</button></div>
+<div class="teacher-author-item"><strong>Ніна Мацяш</strong><span>«І прыйдзе ноч, і ноч міне...»</span><button class="btn-ghost" data-author="Ніна Мацяш" data-material="lesson" data-key="matsyash" type="button">План урока</button></div>
+<div class="teacher-author-item"><strong>Данута Бічэль</strong><span>«Роднае слова»</span><button class="btn-ghost" data-author="Данута Бічэль" data-material="lesson" data-key="bichel" type="button">План урока</button></div>
+<div class="teacher-author-item"><strong>Раіса Баравікова</strong><span>«Я — дзяўчынка на шары»</span><button class="btn-ghost" data-author="Раіса Баравікова" data-material="lesson" data-key="baravikova" type="button">План урока</button></div>
+<div class="teacher-author-item"><strong>Людміла Рублеўская</strong><span>«Шляхта»</span><button class="btn-ghost" data-author="Людміла Рублеўская" data-material="lesson" data-key="rubleuskaya" type="button">План урока</button></div>
+<div class="teacher-author-item"><strong>Яўгенія Пфляўмбаўм</strong><span>«Я маладая...»</span><button class="btn-ghost" data-author="Яўгенія Пфляўмбаўм" data-material="lesson" data-key="pflaumbaum" type="button">План урока</button></div>
+<div class="teacher-author-item"><strong>Ядвіга Бяганская</strong><span>«Ноч»</span><button class="btn-ghost" data-author="Ядвіга Бяганская" data-material="lesson" data-key="byaganskaya" type="button">План урока</button></div>
+<div class="teacher-author-item"><strong>Зоська Верас</strong><span>«Ліст»</span><button class="btn-ghost" data-author="Зоська Верас" data-material="lesson" data-key="veras" type="button">План урока</button></div>
+<div class="teacher-author-item"><strong>Ніна Тарас</strong><span>«На ўсход ідучы»</span><button class="btn-ghost" data-author="Ніна Тарас" data-material="lesson" data-key="taras" type="button">План урока</button></div>
+</div></div></details>
+<details class="teacher-material-list teacher-author-details" id="worksheets-details"><summary>Паказаць аўтарак і рабочыя лісты</summary><div id="worksheets-list">
+<h3>Рабочыя лісты</h3>
+<div class="teacher-author-grid">
+<div class="teacher-author-item"><strong>Цётка</strong><span>«Хрэст на свабоду»</span><button class="btn-ghost" data-author="Цётка" data-material="worksheet" data-sheet="tsetka" type="button">Рабочы ліст</button></div>
+<div class="teacher-author-item"><strong>Канстанцыя Буйло</strong><span>«Мяцеліца»</span><button class="btn-ghost" data-author="Канстанцыя Буйло" data-material="worksheet" data-sheet="buylo" type="button">Рабочы ліст</button></div>
+<div class="teacher-author-item"><strong>Еўгенія Янішчыц</strong><span>«Мова»</span><button class="btn-ghost" data-author="Еўгенія Янішчыц" data-material="worksheet" data-sheet="yanishchyts" type="button">Рабочы ліст</button></div>
+<div class="teacher-author-item"><strong>Ніна Мацяш</strong><span>«І прыйдзе ноч, і ноч міне...»</span><button class="btn-ghost" data-author="Ніна Мацяш" data-material="worksheet" data-sheet="matsyash" type="button">Рабочы ліст</button></div>
+<div class="teacher-author-item"><strong>Данута Бічэль</strong><span>«Роднае слова»</span><button class="btn-ghost" data-author="Данута Бічэль" data-material="worksheet" data-sheet="bichel" type="button">Рабочы ліст</button></div>
+<div class="teacher-author-item"><strong>Раіса Баравікова</strong><span>«Я — дзяўчынка на шары»</span><button class="btn-ghost" data-author="Раіса Баравікова" data-material="worksheet" type="button" disabled>Хутка</button></div>
+<div class="teacher-author-item"><strong>Людміла Рублеўская</strong><span>«Шляхта»</span><button class="btn-ghost" data-author="Людміла Рублеўская" data-material="worksheet" data-sheet="rubleuskaya" type="button">Рабочы ліст</button></div>
+<div class="teacher-author-item"><strong>Яўгенія Пфляўмбаўм</strong><span>«Я маладая...»</span><button class="btn-ghost" data-author="Яўгенія Пфляўмбаўм" data-material="worksheet" data-sheet="pflaumbaum" type="button">Рабочы ліст</button></div>
+<div class="teacher-author-item"><strong>Ядвіга Бяганская</strong><span>«Ноч»</span><button class="btn-ghost" data-author="Ядвіга Бяганская" data-material="worksheet" data-sheet="byaganskaya" type="button">Рабочы ліст</button></div>
+<div class="teacher-author-item"><strong>Зоська Верас</strong><span>«Ліст»</span><button class="btn-ghost" data-author="Зоська Верас" data-material="worksheet" data-sheet="veras" type="button">Рабочы ліст</button></div>
+<div class="teacher-author-item"><strong>Ніна Тарас</strong><span>«На ўсход ідучы»</span><button class="btn-ghost" data-author="Ніна Тарас" data-material="worksheet" type="button" disabled>Хутка</button></div>
+</div></div></details>
+<div class="school-note reveal">Матэрыялы можна будзе спампаваць і раздрукаваць для ўрока.</div>
+</div>
+</div></section>
+<section class="sec-bg-about" id="about">
+<div class="sec-body">
+<div class="about-inner">
+<span class="section-label reveal" style="display:block;text-align:center">Пра праект</span>
+<h2 class="section-title reveal" style="text-align:center">«Яе голас»</h2>
+<div class="divider reveal" style="margin:0 auto 2rem"></div>
+<p class="reveal">Праект «Яе голас» — агульнадаступная аудыябібліятэка твораў 13 беларускіх паэтэс і пісьменніц ад Цёткі да нашых дзён. Кожны трэк — жывы голас маладога чалавека, які чытае ўслых тое, што было напісана дзесяцігоддзі таму. Кожная картка — гатовы інструмент для настаўніка. Кожны QR-код — мост паміж пакаленнямі.</p>
+<div class="partners reveal">
+<span class="partner-badge">Мінская змена 2026</span>
+<span class="partner-badge">Мінскі гарвыканкам</span>
+<span class="partner-badge">Саюз пісьменнікаў Беларусі</span>
+<span class="partner-badge">Академія кіравання</span>
+</div>
+<a class="btn-primary reveal" href="#authors">Вярнуцца да аўтараў</a>
+</div>
+</div>
+</section>
+<footer>
+<div class="footer-logo">Яе голас · 2026</div>
+<div class="footer-note">Усе правы на творы належаць аўтарам і правапераемнікам · Праект носіць выключна адукацыйны характар</div>
+<div class="footer-socials">
+<div class="social-icon"><svg viewbox="0 0 24 24"><path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm3.08 13.5h-1.6c-.6 0-.79-.48-1.87-1.57-1-.97-1.44-.97-1.69-.97-.34 0-.44.1-.44.57v1.43c0 .4-.13.64-1.18.64-1.74 0-3.66-1.05-5.01-3.02C4.83 10.1 4.42 8.1 4.42 7.7c0-.25.1-.49.57-.49h1.6c.43 0 .59.2.75.67.83 2.4 2.22 4.5 2.79 4.5.21 0 .31-.1.31-.64V9.66c-.07-1.15-.67-1.25-.67-1.66 0-.2.16-.4.42-.4h2.52c.36 0 .49.19.49.62v3.33c0 .36.16.49.26.49.21 0 .39-.13.78-.52 1.21-1.35 2.07-3.43 2.07-3.43.11-.25.31-.49.75-.49h1.6c.48 0 .58.25.48.59-.2.93-2.15 3.68-2.15 3.68-.17.27-.23.4 0 .7.17.23.72.7 1.09 1.13.68.77 1.2 1.42 1.34 1.87.14.44-.09.67-.52.67z"></path></svg></div>
+<div class="social-icon"><svg viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.68 7.93c-.12.56-.45.7-.91.44l-2.52-1.86-1.21 1.17c-.13.13-.25.25-.51.25l.18-2.55 4.63-4.19c.2-.18-.04-.28-.31-.1L7.84 14.6l-2.47-.77c-.54-.17-.55-.54.11-.8l9.65-3.73c.45-.16.84.11.51.5z"></path></svg></div>
+</div>
+</footer>
+<div class="demo-badge">Дэманстрацыйная версія · <span>Мінская змена 2026</span></div>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+function makeWave(id,n=38){const el=document.getElementById(id);if(!el)return;for(let i=0;i<n;i++){const b=document.createElement('div');b.className='waveform-bar';b.style.height=(4+Math.random()*22)+'px';el.appendChild(b);}}
+['wvb1','wvp1','wvb2','wvp2','wvb3','wvp3','wvb4','wvp4','wvb5','wvp5','wvb6','wvp6','wvb7','wvp7','wvb8','wvp8','wvb9','wvp9','wvb11','wvp11','wvb12','wvp12','wvb13','wvp13','wvb14','wvp14'].forEach(makeWave);
+function switchAuthor(id,tab){document.querySelectorAll('.author-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.author-tab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');tab.classList.add('active');if(currentPlayer){resetPlayer(currentPlayer);currentPlayer=null;}}
+function switchMethod(id,tab){document.querySelectorAll('.method-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.method-tab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');tab.classList.add('active');}
+let audioCtx=null,currentOsc=null,currentPlayer=null,animId=null;
+function getCtx(){if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)();return audioCtx;}
+function playTone(type){const ctx=getCtx();if(ctx.state==='suspended')ctx.resume();stopTone();const osc=ctx.createOscillator(),gain=ctx.createGain();osc.type='sine';osc.frequency.setValueAtTime(type==='bio'?196:262,ctx.currentTime);gain.gain.setValueAtTime(0,ctx.currentTime);gain.gain.linearRampToValueAtTime(.12,ctx.currentTime+.05);osc.connect(gain);gain.connect(ctx.destination);osc.start();currentOsc={osc,gain,ctx};}
+function stopTone(){if(currentOsc){try{const{osc,gain,ctx}=currentOsc;gain.gain.linearRampToValueAtTime(0,ctx.currentTime+.08);osc.stop(ctx.currentTime+.1);}catch(e){}currentOsc=null;}}
+function togglePlay(el,type){const bars=el.querySelectorAll('.waveform-bar');if(currentPlayer&&currentPlayer!==el)resetPlayer(currentPlayer);if(el.classList.contains('playing')){resetPlayer(el);currentPlayer=null;}else{el.classList.add('playing');el.querySelector('.play-btn').innerHTML='<svg viewBox="0 0 10 12"><rect x="0" y="0" width="3.5" height="12"/><rect x="6.5" y="0" width="3.5" height="12"/></svg>';currentPlayer=el;playTone(type);animBars(bars);}}
+function resetPlayer(el){el.classList.remove('playing');el.querySelector('.play-btn').innerHTML='<svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12"/></svg>';el.querySelectorAll('.waveform-bar').forEach(b=>{b.classList.remove('lit');b.style.height=(4+Math.random()*22)+'px';});stopTone();if(animId){cancelAnimationFrame(animId);animId=null;}}
+function animBars(bars){let t=0;function f(){t++;if(t%3===0)bars.forEach(b=>{const on=Math.random()>.35;b.classList.toggle('lit',on);b.style.height=(on?10+Math.random()*16:3+Math.random()*7)+'px';});animId=requestAnimationFrame(f);}animId=requestAnimationFrame(f);}
+const obs=new IntersectionObserver((e)=>{e.forEach((en,i)=>{if(en.isIntersecting){setTimeout(()=>en.target.classList.add('visible'),i*55);obs.unobserve(en.target);}});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+
+// Real audio players with seek
+function getTimeEl(audioId){
+  return audioId==='real_poem' ? document.getElementById('time_bio') : document.getElementById('time_poem');
+}
+function fmtTime(s){
+  const m=Math.floor(s/60), sec=Math.floor(s%60).toString().padStart(2,'0');
+  return m+':'+sec;
+}
+function updateProgress(wvId, pct){
+  const wv=document.getElementById(wvId); if(!wv)return;
+  const bars=wv.querySelectorAll('.waveform-bar');
+  const n=bars.length;
+  bars.forEach((b,i)=>{
+    const bp=i/n;
+    if(bp<=pct){
+      b.classList.add('lit');
+      // slight animation near playhead
+      if(Math.abs(bp-pct)<0.06) b.style.height=(10+Math.random()*14)+'px';
+    } else {
+      b.classList.remove('lit');
+    }
+  });
+}
+function resetWaveform(wvId){
+  const wv=document.getElementById(wvId); if(!wv)return;
+  wv.querySelectorAll('.waveform-bar').forEach(b=>{
+    b.classList.remove('lit');
+    b.style.height=(4+Math.random()*22)+'px';
+  });
+}
+function addSeekHandler(playerEl, audio, wvId){
+  const wrap=playerEl.querySelector('.waveform-wrap');
+  if(!wrap) return;
+  wrap.style.cursor='pointer';
+  wrap.style.userSelect='none';
+  // Remove old handler if any
+  if(wrap._seek){ wrap.removeEventListener('mousedown',wrap._seek); wrap.removeEventListener('touchstart',wrap._seek); }
+  function seek(e){
+    e.stopPropagation();
+    const rect=wrap.getBoundingClientRect();
+    const clientX=e.touches ? e.touches[0].clientX : e.clientX;
+    const pct=Math.max(0,Math.min(1,(clientX-rect.left)/rect.width));
+    if(audio.duration){ audio.currentTime=pct*audio.duration; }
+  }
+  wrap._seek=seek;
+  wrap.addEventListener('mousedown',seek);
+  wrap.addEventListener('touchstart',seek,{passive:true});
+}
+function toggleRealPlay(audioId, wvId, playerEl) {
+  const audio=document.getElementById(audioId); if(!audio)return;
+  const timeEl=getTimeEl(audioId);
+  // Stop other real players
+  document.querySelectorAll('.real-player.playing').forEach(p=>{
+    if(p!==playerEl){
+      p.classList.remove('playing');
+      p.querySelector('.play-btn').innerHTML='<svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12"/></svg>';
+      const aid=p.getAttribute('onclick').match(/'([^']+)'/)[1];
+      const a=document.getElementById(aid);
+      if(a){ a.pause(); }
+    }
+  });
+  if(audio.paused){
+    if(currentPlayer){resetPlayer(currentPlayer);currentPlayer=null;}
+    audio.play();
+    playerEl.classList.add('playing');
+    playerEl.querySelector('.play-btn').innerHTML='<svg viewBox="0 0 10 12"><rect x="0" y="0" width="3.5" height="12"/><rect x="6.5" y="0" width="3.5" height="12"/></svg>';
+    addSeekHandler(playerEl, audio, wvId);
+    audio.ontimeupdate=()=>{
+      const pct=audio.duration ? audio.currentTime/audio.duration : 0;
+      updateProgress(wvId, pct);
+      if(timeEl) timeEl.textContent=fmtTime(audio.currentTime)+(audio.duration?' / '+fmtTime(audio.duration):'');
+    };
+    audio.onended=()=>{
+      playerEl.classList.remove('playing');
+      playerEl.querySelector('.play-btn').innerHTML='<svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12"/></svg>';
+      if(timeEl) timeEl.textContent='0:00';
+      resetWaveform(wvId);
+    };
+  } else {
+    audio.pause();
+    playerEl.classList.remove('playing');
+    playerEl.querySelector('.play-btn').innerHTML='<svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12"/></svg>';
+  }
+}
+function animBarsForEl(bars){
+  if(animId){cancelAnimationFrame(animId);animId=null;}
+  let t=0;
+  function f(){t++;if(t%3===0)bars.forEach(b=>{const on=Math.random()>.35;b.classList.toggle('lit',on);b.style.height=(on?10+Math.random()*16:3+Math.random()*7)+'px';});animId=requestAnimationFrame(f);}
+  animId=requestAnimationFrame(f);
+}
+
+// Activate first tab
+document.querySelector('.author-tab').classList.add('active');
+
+document.querySelectorAll('[data-material]').forEach(btn=>btn.addEventListener('click',()=>{
+ if(btn.dataset.material==='lesson' && btn.dataset.key){const a=document.createElement('a');a.href='plans/'+btn.dataset.key+'.docx';a.download=PLAN_FILES[btn.dataset.key]||'';document.body.appendChild(a);a.click();a.remove();return;}
+ if(btn.dataset.material==='worksheet' && window.WORKSHEETS && window.WORKSHEETS[btn.dataset.sheet]){openSheet(btn.dataset.sheet);return;}
+ const type='план урока';
+ alert(`${btn.dataset.author}: ${type}. Файл будет доступен после подготовки соответствующего материала.`);
+}));
+</script>
+<style>
+#sheetModal{position:fixed;inset:0;z-index:1000;display:none;flex-direction:column;background:rgba(6,12,6,.94);padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
+#sheetModal.open{display:flex}
+.sheet-bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;padding:.7rem 1rem;border-bottom:1px solid rgba(212,170,74,.25)}
+.sheet-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--cream)}
+.sheet-actions{display:flex;gap:.5rem}
+.sheet-actions a,.sheet-actions button{font:inherit;font-size:.78rem;padding:.45rem .9rem;border-radius:999px;border:1px solid rgba(212,170,74,.45);background:transparent;color:var(--cream);cursor:pointer;text-decoration:none}
+.sheet-actions a:hover,.sheet-actions button:hover{background:var(--gold);color:var(--bg)}
+.sheet-view{flex:1;overflow:auto;display:flex;justify-content:center;padding:1rem}
+.sheet-view img{max-width:100%;height:auto;align-self:flex-start;box-shadow:0 8px 40px rgba(0,0,0,.7)}
+@media print{body.sheet-open>*:not(#sheetModal){display:none!important}#sheetModal{position:static;background:#fff;display:block}.sheet-bar{display:none}.sheet-view{padding:0;display:block}.sheet-view img{width:100%;max-height:100vh;object-fit:contain;box-shadow:none}@page{margin:0}}
+</style>
+<div id="sheetModal" role="dialog" aria-modal="true" aria-label="Рабочы ліст">
+<div class="sheet-bar"><div class="sheet-title" id="sheetTitle"></div>
+<div class="sheet-actions"><a id="sheetDownload" download>Спампаваць</a><button type="button" id="sheetPrint">Раздрукаваць</button><button type="button" id="sheetClose">Закрыць ✕</button></div></div>
+<div class="sheet-view"><img id="sheetImg" alt=""></div></div>
+<script>
+function openSheet(k){var s=WORKSHEETS[k];if(!s)return;
+document.getElementById('sheetImg').src=s.src;document.getElementById('sheetImg').alt='Рабочы ліст: '+s.author+' · «'+s.title+'»';
+document.getElementById('sheetTitle').textContent=s.author+' · «'+s.title+'»';
+var d=document.getElementById('sheetDownload');d.href=s.src;d.download='Рабочы_ліст_'+s.author.replace(/\s+/g,'_')+'_'+s.title.replace(/[\s.]+/g,'_')+'.jpg';
+document.getElementById('sheetModal').classList.add('open');document.body.classList.add('sheet-open');document.body.style.overflow='hidden';}
+window.PLAN_FILES={tsetka:'План-канспект_01_Цётка.docx',buylo:'План-канспект_02_Канстанцыя_Буйло.docx',yanishchyts:'План-канспект_03_Еўгенія_Янішчыц.docx',matsyash:'План-канспект_04_Ніна_Мацяш.docx',bichel:'План-канспект_05_Данута_Бічэль.docx',baravikova:'План-канспект_06_Раіса_Баравікова.docx',rubleuskaya:'План-канспект_07_Людміла_Рублеўская.docx',pflaumbaum:'План-канспект_08_Яўгенія_Пфляўмбаўм.docx',byaganskaya:'План-канспект_09_Ядвіга_Бяганская.docx',veras:'План-канспект_10_Зоська_Верас.docx',taras:'План-канспект_11_Ніна_Тарас.docx'};
+window.WORKSHEETS={tsetka:{src:'sheets/tsetka.jpg',author:'Цётка',title:'Хрэст на свабоду'},pflaumbaum:{src:'sheets/pflaumbaum.jpg',author:'Яўгенія Пфляўмбаўм',title:'Я маладая...'},buylo:{src:'sheets/buylo.jpg',author:'Канстанцыя Буйло',title:'Мяцеліца'},veras:{src:'sheets/veras.jpg',author:'Зоська Верас',title:'Ліст'},byaganskaya:{src:'sheets/byaganskaya.jpg',author:'Ядвіга Бяганская',title:'Ноч'},bichel:{src:'sheets/bichel.jpg',author:'Данута Бічэль',title:'Роднае слова'},rubleuskaya:{src:'sheets/rubleuskaya.jpg',author:'Людміла Рублеўская',title:'Шляхта'},yanishchyts:{src:'sheets/yanishchyts.jpg',author:'Еўгенія Янішчыц',title:'Мова'},matsyash:{src:'sheets/matsyash.jpg',author:'Ніна Мацяш',title:'І прыйдзе ноч, і ноч міне...'}};
+function closeSheet(){var dl=document.getElementById('sheetDownload');dl.textContent='Спампаваць';document.getElementById('sheetModal').classList.remove('open');document.body.classList.remove('sheet-open');document.body.style.overflow='';}
+document.getElementById('sheetClose').addEventListener('click',closeSheet);
+document.getElementById('sheetPrint').addEventListener('click',function(){window.print();});
+document.getElementById('sheetModal').addEventListener('click',function(e){if(e.target===this||e.target.classList.contains('sheet-view'))closeSheet();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSheet();});
+</script>
+<script>
+/* Аўдыя: файлы audio/<ключ>-bio.m4a і audio/<ключ>-poem.m4a. Няма файла — паказваем «Хутка». */
+(function(){
+const PLAY='<svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12"/></svg>',PAUSE='<svg viewBox="0 0 10 12"><rect x="0" y="0" width="3.5" height="12"/><rect x="6.5" y="0" width="3.5" height="12"/></svg>';
+const A=new Audio();A.preload='none';let cur=null;
+function ui(c,on){c.el.classList.toggle('playing',on);c.el.querySelector('.play-btn').innerHTML=on?PAUSE:PLAY;}
+function stopCur(){if(!cur)return;A.pause();ui(cur,false);resetWaveform(cur.wv);cur.t.textContent='0:00';cur=null;}
+window.stopAuthorAudio=stopCur;
+window.playTrack=function(el,key,kind){
+  if(cur&&cur.el===el){stopCur();return;}
+  stopCur();if(window.stopPlaylist)window.stopPlaylist();
+  if(typeof currentPlayer!=='undefined'&&currentPlayer){resetPlayer(currentPlayer);currentPlayer=null;}
+  const wv=el.querySelector('.waveform').id,t=el.querySelector('.player-time');
+  cur={el,wv,t};ui(cur,true);t.textContent='…';
+  const wrap=el.querySelector('.waveform-wrap');
+  if(wrap&&!wrap._stop){wrap._stop=1;wrap.addEventListener('click',e=>e.stopPropagation());}
+  addSeekHandler(el,A,wv);
+  A.src='audio/'+key+'-'+kind+'.m4a';
+  A.play().catch(fail);
+};
+function fail(){if(!cur)return;const c=cur;cur=null;A.pause();ui(c,false);resetWaveform(c.wv);c.t.textContent='Хутка';c.el.title='Запіс рыхтуецца';}
+A.addEventListener('error',fail);
+A.addEventListener('timeupdate',()=>{if(!cur)return;const p=A.duration?A.currentTime/A.duration:0;updateProgress(cur.wv,p);cur.t.textContent=fmtTime(A.currentTime)+(A.duration?' / '+fmtTime(A.duration):'');});
+A.addEventListener('ended',stopCur);
+})();
+/* Зборнік: прайграванне вершаў па чарзе */
+(function(){
+const rows=[...document.querySelectorAll('#playlist .playlist-track')];
+
+const status=document.getElementById('playlistStatus'),playAll=document.getElementById('playlistPlayAll'),stop=document.getElementById('playlistStopAll');
+if(!rows.length||!playAll||!stop)return;
+const A=new Audio();A.preload='none';let queue=[],i=0,on=false,bad=-1;
+const label=r=>r.querySelector('.track-title').textContent.trim()+' — '+r.querySelector('.track-author').textContent.trim();
+const clear=()=>rows.forEach(r=>{r.classList.remove('is-playing');r.style.outline='';});
+function stopP(msg){on=false;queue=[];i=0;A.pause();clear();status.textContent=msg||'Прайграванне спынена.';}
+window.stopPlaylist=()=>{if(on||queue.length)stopP('Прайграванне спынена.');};
+function next(){
+  if(!on)return;
+  if(i>=queue.length){on=false;clear();status.textContent='Прайграванне даступных запісаў завершана.';return;}
+  const r=queue[i];clear();r.classList.add('is-playing');r.style.outline='1px solid var(--gold)';
+  status.textContent='Слухаецца: '+label(r);A.src='audio/'+r.dataset.key+'-poem.m4a';A.play().catch(()=>fail(i));
+}
+function fail(idx){if(!on||bad===idx)return;bad=idx;status.textContent='Для «'+label(queue[idx])+'» запіс яшчэ не дададзены. Прапускаем.';i++;setTimeout(next,700);}
+function start(list){stopP();if(window.stopAuthorAudio)window.stopAuthorAudio();queue=list;i=0;bad=-1;on=true;next();}
+A.addEventListener('ended',()=>{if(on){i++;next();}});
+A.addEventListener('error',()=>fail(i));
+playAll.addEventListener('click',()=>start(rows));stop.addEventListener('click',()=>stopP());
+rows.forEach(r=>{const run=()=>start([r]);r.addEventListener('click',run);r.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();run();}});});
+})();
+</script>
+</body>
+</html>
